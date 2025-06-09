@@ -1,10 +1,11 @@
 import { experiences } from '@/constants/data'
 import { Dot } from 'lucide-react'
+import { FadeInWhenVisible } from './animate'
 
 export default function ExperienceSection() {
   return (
     <section className="py-24">
-      <div className="w-full">
+      <FadeInWhenVisible className="w-full">
         <h2 className="mb-16 text-center text-2xl font-light text-foreground">
           Experience
         </h2>
@@ -29,7 +30,7 @@ export default function ExperienceSection() {
             </div>
           ))}
         </div>
-      </div>
+      </FadeInWhenVisible>
     </section>
   )
 }

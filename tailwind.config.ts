@@ -1,3 +1,4 @@
+import { Montserrat } from "next/font/google"
 import type { Config } from "tailwindcss"
 
 const config = {
@@ -64,6 +65,8 @@ const config = {
         "space-grotesk": ["var(--font-space-grotesk)"],
         bytesized: ["var(--font-bytesized)"],
         "geist-mono": ["var(--font-geist-mono)"],
+        montserrat: ["var(--font-montserrat)"],
+        "open-sans": ["var(--font-open-sans)"],
       },
       keyframes: {
         "accordion-down": {

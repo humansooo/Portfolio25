@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { user } from '@/constants/data'
 import Link from 'next/link'
 import { toast } from 'sonner'
+import { FadeInWhenVisible } from './animate'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ export default function ContactSection() {
 
   return (
     <section className="py-24">
-      <div className="w-full">
+      <FadeInWhenVisible className="w-full">
         <h2 className="mb-16 text-center text-2xl font-light  text-foreground">
           Contact
         </h2>
@@ -94,7 +95,7 @@ export default function ContactSection() {
             </button>
           </form>
         </div>
-      </div>
+      </FadeInWhenVisible>
     </section>
   )
 }

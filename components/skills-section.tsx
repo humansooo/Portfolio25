@@ -1,3 +1,5 @@
+import { FadeInWhenVisible } from './animate'
+
 export default function SkillsSection() {
   const skills = [
     'JavaScript',
@@ -16,7 +18,7 @@ export default function SkillsSection() {
 
   return (
     <section className="py-24">
-      <div className="w-full">
+      <FadeInWhenVisible className="w-full">
         <h2 className="mb-16 text-center text-2xl font-light text-foreground">
           Skills
         </h2>
@@ -30,7 +32,7 @@ export default function SkillsSection() {
             </span>
           ))}
         </div>
-      </div>
+      </FadeInWhenVisible>
     </section>
   )
 }

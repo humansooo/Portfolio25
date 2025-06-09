@@ -9,3 +9,5 @@ export const randomColor = () => {
 };
 
 export const colorRandom = randomColor();
+
+export const rnColor = `#000000${Math.floor(Math.random() * 70 + 30)}`
