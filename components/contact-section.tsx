@@ -43,10 +43,10 @@ export default function ContactSection() {
             </p>
             <div className="space-y-4">
               <p className="text-sm text-foreground">
-                <Link href={user.email}>{user.email}</Link>
+                <Link href={`mailto:${user.email}`}>{user.email}</Link>
               </p>
               <p className="text-sm text-foreground">
-                <Link href={user.phone}>{user.phone}</Link>
+                <Link href={`tel:${user.phone}`}>{user.phone}</Link>
               </p>
             </div>
           </div>
