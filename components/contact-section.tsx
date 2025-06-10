@@ -7,6 +7,7 @@ import { user } from '@/constants/data'
 import Link from 'next/link'
 import { toast } from 'sonner'
 import { FadeInWhenVisible } from './animate'
+import { LucidePhone, Mail, PhoneCall } from 'lucide-react'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -41,12 +42,34 @@ export default function ContactSection() {
               I'm currently open to new opportunities and collaborations. Feel
               free to reach out if you'd like to work together.
             </p>
-            <div className="space-y-4">
+            <div className="flex flex-col gap-2">
               <p className="text-sm text-foreground">
-                <Link href={`mailto:${user.email}`}>{user.email}</Link>
+                <Link
+                  href={`mailto:${user.email}`}
+                  className="flex items-center gap-2"
+                >
+                  <span className="mr-2">
+                    <Mail
+                      fill="currentColor"
+                      size={12}
+                    />
+                  </span>
+                  {user.email}
+                </Link>
               </p>
-              <p className="text-sm text-foreground">
-                <Link href={`tel:${user.phone}`}>{user.phone}</Link>
+              <p className="flex items-center  gap-2 text-sm text-foreground">
+                <Link
+                  href={`tel:${user.phone}`}
+                  className="flex items-center gap-2"
+                >
+                  <span className="mr-2">
+                    <PhoneCall
+                      fill="currentColor"
+                      size={12}
+                    />
+                  </span>
+                  call
+                </Link>
               </p>
             </div>
           </div>
