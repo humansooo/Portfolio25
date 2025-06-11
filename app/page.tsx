@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen min-w-screen outline bg-background overflow-x-hidden">
       <Navbar />
       <main className="mx-auto lg:max-w-[50%] overflow-x-hidden z-10 px-8">
-        {/* <Graphic /> */}
+        <Graphic />
         <div
           id="about"
           className="scroll-mt-20"
