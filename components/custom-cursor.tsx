@@ -1,10 +1,33 @@
 'use client'
 
+import { set } from 'date-fns'
 import { useEffect, useState } from 'react'
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [hovering, setHovering] = useState(false)
+  const [isOnScreen, setIsOnScreen] = useState(false)
+
+  // Check if the cursor is on screen
+  useEffect(() => {
+    const handleMouseOut = () => {
+      setIsOnScreen(false)
+    }
+    const handleMouseOver = () => {
+      setIsOnScreen(true)
+    }
+    window.addEventListener('mouseout', handleMouseOut)
+    // Set the cursor to be on screen when the mouse moves
+    window.addEventListener('mousemove', () => {
+      setIsOnScreen(true)
+    })
+    // Cleanup event listeners on component unmount
+
+    return () => {
+      window.removeEventListener('mouseout', () => setIsOnScreen(false))
+      window.removeEventListener('mousemove', () => setIsOnScreen(true))
+    }
+  }, [])
 
   useEffect(() => {
     const move = (e: any) => {
@@ -13,6 +36,7 @@ export default function CustomCursor() {
 
     const handleMouseEnter = (e: MouseEvent) => {
       const target = e.target as HTMLElement
+
       if (
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
@@ -26,6 +50,7 @@ export default function CustomCursor() {
 
     const handleMouseLeave = (e: MouseEvent) => {
       const target = e.target as HTMLElement
+
       if (
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
@@ -53,7 +78,9 @@ export default function CustomCursor() {
       <button
         className={`cursor_pointer max-md:hidden ${
           hovering ? 'cursor_pointer--link-hover' : ''
-        }`}
+        } 
+        ${!isOnScreen ? 'hidden' : ''}  
+        `}
         id="btn"
         style={{
           left: `${position.x}px`,
