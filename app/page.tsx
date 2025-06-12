@@ -6,7 +6,7 @@ import Navbar from '@/components/navbar'
 import ProjectsSection from '@/components/projects-section'
 import SkillsSection from '@/components/skills-section'
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="min-h-screen min-w-screen outline bg-background overflow-x-hidden">
       <Navbar />

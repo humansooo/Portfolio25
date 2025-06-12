@@ -45,6 +45,7 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: 'Himanshu Suthar | Portfolio',
+  applicationName: 'Himanshu Suthar | Portfolio',
   description:
     'A full-stack developer specialized in React Native and Web Development. I help brands connect with people with a fresh and distinctive approach.',
   keywords: [
@@ -66,7 +67,19 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  // generator: 'v0.dev',
+  creator: 'Himanshu Suthar',
+  formatDetection: {
+    email: true,
+    telephone: true,
+  },
+  authors: [{ name: 'Himanshu Suthar', url: 'https://linkedin.com/in/hmxnsu' }],
+  generator: 'Next.js',
+  robots: {
+    index: true,
+    follow: true,
+    noimageindex: true,
+    noarchive: true,
+  },
 }
 
 export default function RootLayout({
