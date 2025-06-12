@@ -51,7 +51,7 @@ export default function CustomCursor() {
   return (
     <>
       <button
-        className={`cursor_pointer hidden lg:block ${
+        className={`cursor_pointer max-md:hidden ${
           hovering ? 'cursor_pointer--link-hover' : ''
         }`}
         id="btn"
