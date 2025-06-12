@@ -26,6 +26,7 @@ export default function SkillsSection() {
           {skills.map((skill, index) => (
             <span
               key={index}
+              role="button"
               className="rounded-full  border border-dashed border-border px-4 py-2 text-sm text-foreground transition-colors hover:border-foreground"
             >
               {skill}

@@ -17,7 +17,12 @@ export default function ExperienceSection() {
             >
               <div className="w-full">
                 <h3 className="mb-2 w-full flex items-center justify-between text-lg font-medium text-foreground">
-                  <div className="flex items-center gap-2">{exp.title}</div>
+                  <div
+                    role="button"
+                    className="flex items-center gap-2"
+                  >
+                    {exp.title}
+                  </div>
                   <div className="text-xs text-right font-medium text-foreground">
                     {exp.year}
                   </div>

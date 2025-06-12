@@ -13,6 +13,7 @@ import { ThemeProvider } from '@/lib/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeToggle } from '@/components/theme-toggle'
 import Head from 'next/head'
+import CustomCursor from '@/components/custom-cursor'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -110,7 +111,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <CustomCursor /> */}
           {children}
           <Toaster
             position="top-right"

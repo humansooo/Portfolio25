@@ -1,7 +1,7 @@
 import AboutSection from '@/components/about-section'
 import ContactSection from '@/components/contact-section'
+import CustomCursor from '@/components/custom-cursor'
 import ExperienceSection from '@/components/experience-section'
-import Graphic from '@/components/graphic'
 import Navbar from '@/components/navbar'
 import ProjectsSection from '@/components/projects-section'
 import SkillsSection from '@/components/skills-section'
@@ -10,8 +10,8 @@ export default async function Home() {
   return (
     <div className="min-h-screen min-w-screen outline bg-background overflow-x-hidden">
       <Navbar />
+      <CustomCursor />
       <main className="mx-auto lg:max-w-[50%] overflow-x-hidden z-10 px-8">
-        <Graphic />
         <div
           id="about"
           className="scroll-mt-20"

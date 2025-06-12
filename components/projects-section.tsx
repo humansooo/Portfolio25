@@ -2,6 +2,7 @@ import { projects } from '@/constants/data'
 import { Link2 } from 'lucide-react'
 import Image from 'next/image'
 import { FadeInWhenVisible } from './animate'
+import Link from 'next/link'
 
 export default function ProjectsSection() {
   return (
@@ -14,7 +15,8 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <FadeInWhenVisible
               key={index}
-              className="group cursor-pointer gap-2 flex flex-col border relative border-dashed border-border p-4 "
+              role="button"
+              className=" gap-2 flex flex-col border relative border-dashed border-border p-4 "
             >
               <div className="overflow-hidden">
                 <Image
@@ -22,6 +24,7 @@ export default function ProjectsSection() {
                   alt={project.image}
                   draggable={false}
                   width={500}
+                  role="button"
                   height={500}
                   className="object-cover transition-transform duration-500 rounded-sm hover:scale-105 aspect-[8/5]"
                 />

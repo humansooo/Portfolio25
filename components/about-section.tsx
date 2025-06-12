@@ -10,12 +10,15 @@ export default function AboutSection() {
           <EasterEgg />
         </div>
         <div className="space-y-6">
-          <div className="text-xl font-light  text-foreground md:text-xl lg:text-2xl">
+          <h1 className="text-xl font-light  text-foreground md:text-xl lg:text-2xl">
             Hey, I'm {user.name},
             <br />
             a full-Stack developer specialized in
             <br />
-            <span className="font-geist-mono font-black">
+            <span
+              role="button"
+              className="font-geist-mono font-black"
+            >
               React Native & Web Development
             </span>
             .
@@ -23,15 +26,18 @@ export default function AboutSection() {
             <br />
             connect with people with
             <br />
-            <span className="font-geist-mono font-bold">
+            <span
+              role="button"
+              className="font-geist-mono font-bold"
+            >
               fresh and distinctive
             </span>{' '}
             approach.
-          </div>
+          </h1>
         </div>
-        <div className=" hidden lg:block absolute right-8 top-1/2">
+        {/* <div className=" hidden lg:block absolute right-8 top-1/2">
           <div className="h-2 w-2 rounded-full bg-foreground"></div>
-        </div>
+        </div> */}
       </FadeInWhenVisible>
     </section>
   )
