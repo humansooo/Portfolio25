@@ -37,11 +37,11 @@ export default function ProjectsSection() {
                     className="inline-block cursor-pointer text-foreground/30 "
                   />
                 </h3>
-                <p className="text-sm font-bold text-foreground flex  flex-wrap">
+                <p className="text-sm font-bold text-foreground flex mt-2 gap-1 flex-wrap">
                   {project.skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="mr-2 rounded-full px-0 dark:text-foreground"
+                      className=" rounded-md px-1.5 py-0.5 bg-muted/80 text-xs text-foreground/70"
                     >
                       {skill}
                     </span>
