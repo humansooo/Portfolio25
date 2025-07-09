@@ -40,21 +40,25 @@ export const projects = [
         title: 'Portfolio Website',
         skills: ['React.js', 'Tailwind'],
         image: '/portfolio1.svg',
+        link: 'https://github.com/alternativehimanshu/portfolio',
     },
     {
         title: 'Apshelf - App Curator',
         skills: ['React Native'],
         image: '/apshelf.svg',
+        link: 'https://github.com/alternativehimanshu/apshelf',
     },
     {
         title: 'ApesType - Speed Typing',
         skills: ['Next.js', 'Tailwind', 'TypeScript'],
         image: '/apestype.svg',
+        link: 'https://apestype.vercel.app/',
     },
     {
         title: 'Expo Toastee',
         skills: ['Open Source', 'React Native', 'TypeScript', 'Redux',],
         image: '/placeholder.svg',
+        link: 'https://github.com/alternativehimanshu/expo-toastee',
     },
     {
         title: 'Apgyc - Campus Delivery',

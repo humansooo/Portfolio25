@@ -15,7 +15,6 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <FadeInWhenVisible
               key={index}
-              role="button"
               className=" gap-2 flex flex-col border relative border-dashed border-border p-4 "
             >
               <div className="overflow-hidden">
@@ -24,7 +23,6 @@ export default function ProjectsSection() {
                   alt={project.image}
                   draggable={false}
                   width={500}
-                  role="button"
                   height={500}
                   className="object-cover transition-transform duration-500 rounded-sm hover:scale-105 aspect-[8/5]"
                 />
@@ -32,10 +30,16 @@ export default function ProjectsSection() {
               <div className="">
                 <h3 className="text-lg font-bold flex items-center justify-between text-foreground/80">
                   {project.title}
-                  <Link2
-                    size={18}
-                    className="inline-block cursor-pointer text-foreground/30 "
-                  />
+
+                  {project.link && (
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      className="inline-block cursor-pointer text-foreground/30 "
+                    >
+                      <Link2 size={18} />
+                    </Link>
+                  )}
                 </h3>
                 <p className="text-sm font-bold text-foreground flex mt-2 gap-1 flex-wrap">
                   {project.skills.map((skill, index) => (
