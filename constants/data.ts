@@ -32,11 +32,6 @@ export const experiences = [
 
 export const projects = [
     {
-        title: 'Parul Sevashram Hospital - Ecoach',
-        skills: ['Next.js', 'NestJS', 'TypeScript', 'Prisma', 'Postgres', 'aws', 'socket.io'],
-        image: '/placeholder.svg',
-    },
-    {
         title: 'Portfolio Website',
         skills: ['React.js', 'Tailwind'],
         image: '/portfolio1.svg',
@@ -55,15 +50,33 @@ export const projects = [
         link: 'https://apestype.vercel.app/',
     },
     {
-        title: 'Expo Toastee',
-        skills: ['Open Source', 'React Native', 'TypeScript', 'Redux',],
-        image: '/placeholder.svg',
-        link: 'https://github.com/alternativehimanshu/expo-toastee',
+        title: 'FormBot - Flow Form Builder',
+        skills: ['NextJS', 'TypeScript', 'Tailwind', 'Zustand'],
+        image: '/formbot.png',
+        link: 'https://gaurangmernproject.vercel.app/',
     },
     {
         title: 'Apgyc - Campus Delivery',
         skills: ['React Native', 'NestJS', 'TypeScript', 'Prisma', 'Postgres', 'Stripe', 'Firebase'],
         image: '/apgyc.svg',
+        link: 'https://play.google.com/store/apps/details?id=com.igntionnest.apgyc&hl=en_IN',
+    },
+    {
+        title: 'Rental Bnb - Airbnb Clone',
+        skills: ['NextJS', 'TypeScript', 'Prisma', 'Postgres', 'Firebase'],
+        image: '/bnb.png',
+        link: 'https://rental-bnb-aqb3.vercel.app/',
+    },
+    {
+        title: 'Parul Sevashram Hospital - Ecoach',
+        skills: ['Next.js', 'NestJS', 'TypeScript', 'Prisma', 'Postgres', 'aws', 'socket.io'],
+        image: '/placeholder.svg',
+    },
+    {
+        title: 'Expo Toastee',
+        skills: ['Open Source', 'React Native', 'TypeScript', 'Redux',],
+        image: '/placeholder.svg',
+        link: 'https://github.com/alternativehimanshu/expo-toastee',
     },
 
 ]
