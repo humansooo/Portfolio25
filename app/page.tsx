@@ -10,7 +10,6 @@ export default async function Home() {
   return (
     <div className="min-h-screen min-w-screen outline bg-background overflow-x-hidden">
       <Navbar />
-      <CustomCursor />
       <main className="mx-auto lg:max-w-[50%] overflow-x-hidden z-10 px-8">
         <div
           id="about"
