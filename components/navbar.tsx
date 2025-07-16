@@ -4,10 +4,13 @@ import type React from 'react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import {
+  Briefcase,
   ArrowRight,
   Cross,
   Dot,
   DotIcon,
+  Mail,
+  User,
   Github,
   LucideArrowRight,
   Menu,
@@ -19,9 +22,9 @@ import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { name: 'Work', href: '#experience' },
-  { name: 'About', href: '#about' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Work', href: '#experience', icon: <Briefcase size={16} /> },
+  { name: 'About', href: '#about', icon: <User size={16} /> },
+  { name: 'Contact', href: '#contact', icon: <Mail size={16} /> },
 ]
 
 export default function Navbar() {
@@ -154,7 +157,7 @@ export default function Navbar() {
       >
         <div
           className={cn(
-            'mx-auto flex h-20 lg:max-w-[40%] items-center justify-between relative px-8 max-md:justify-center',
+            'mx-auto flex h-20 lg:max-w-[640px] items-center justify-between relative px-8 max-md:justify-center',
             isMobile ? 'px-4' : 'px-8'
           )}
         >
@@ -166,15 +169,15 @@ export default function Navbar() {
           </Link>
 
           {!isMobile ? (
-            <nav className="flex max-md:hidden space-x-12">
+            <nav className="flex max-md:hidden space-x-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleSmoothScroll(e, item.href)}
-                  className="text-sm font-medium text-foreground transition-colors hover:text-foreground"
+                  className="transition-colors hover:bg-foreground/10 rounded-xl p-2"
                 >
-                  {item.name}
+                  {item.icon}
                 </Link>
               ))}
             </nav>
