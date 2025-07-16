@@ -17,14 +17,16 @@ export default function ExperienceSection() {
               className="flex "
             >
               <div className="w-full">
-                <h3 className="mb-2 w-full flex items-center justify-between text-lg font-medium text-foreground">
+                <h3 className="mb-3 w-full flex items-center justify-between text-base font-geist-mono font-bold text-foreground/80 ">
                   <ExpLinkTitle title={exp.title} link={exp.link} />
-                  <div className="text-xs text-right font-medium text-foreground">
+                  <div className="text-xs text-right font-light text-foreground/60 ">
                     {exp.year}
                   </div>
                 </h3>
-                <p className="mb-0 text-sm font-semibold text-foreground">{exp.company}</p>
-                <p className="text-sm leading-relaxed text-foreground">
+                <p className="mb-1 text-sm font-semibold text-foreground/80">
+                  {exp.company}
+                </p>
+                <p className="text-sm  text-foreground/80">
                   {exp.description}
                 </p>
               </div>

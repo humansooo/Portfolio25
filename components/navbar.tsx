@@ -5,16 +5,9 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import {
   Briefcase,
-  ArrowRight,
-  Cross,
-  Dot,
-  DotIcon,
   Mail,
   User,
   Github,
-  LucideArrowRight,
-  Menu,
-  MenuIcon,
   XIcon,
 } from 'lucide-react'
 import { user } from '@/constants/data'
@@ -102,7 +95,7 @@ export default function Navbar() {
             size={18}
             strokeWidth={2}
             className={cn(
-              'text-foreground transition-all duration-300',
+              'text-foreground transition-all  duration-300',
               !isMobileOpen && 'rotate-[45deg]'
             )}
           />
@@ -115,8 +108,8 @@ export default function Navbar() {
     return (
       <div
         className={cn(
-          'fixed inset-0 z-50 h-screen w-full bg-background/50 backdrop-blur-sm transition-all duration-300',
-          isMobileOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          'fixed inset-0 z-50 h-screen w-full bg-background/50 backdrop-blur-sm transition-all duration-[1000]',
+          isMobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
         )}
       >
         <nav className="flex flex-col items-center justify-center h-full space-y-4 p-4">

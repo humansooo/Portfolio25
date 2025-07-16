@@ -22,12 +22,12 @@ export default function SkillsSection() {
         <h2 className="mb-16 text-center text-2xl font-light text-foreground">
           Skills
         </h2>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           {skills.map((skill, index) => (
             <span
               key={index}
               role="button"
-              className="rounded-full  border border-dashed border-border px-4 py-2 text-sm text-foreground transition-colors hover:border-foreground"
+              className="rounded-xl  border border-dashed border-border px-4 py-2 text-xs text-foreground transition-colors hover:border-foreground"
             >
               {skill}
             </span>

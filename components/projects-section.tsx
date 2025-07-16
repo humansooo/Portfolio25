@@ -11,7 +11,7 @@ export default function ProjectsSection() {
         <h2 className="mb-16 text-center text-2xl font-light text-foreground">
           Projects
         </h2>
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2">
           {projects.map((project, index) => (
             <FadeInWhenVisible
               key={index}
@@ -28,7 +28,7 @@ export default function ProjectsSection() {
                 />
               </div>
               <div className="">
-                <h3 className="text-lg font-bold flex items-center justify-between text-foreground/80">
+                <h3 className="text-sm font-geist-mono font-bold flex items-center justify-between text-foreground/80">
                   {project.title}
 
                   {project.link && (

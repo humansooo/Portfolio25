@@ -37,8 +37,8 @@ export default function ContactSection() {
           Contact
         </h2>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-          <div>
-            <p className="mb-8 text-lg leading-relaxed text-foreground">
+          <div className="w-full">
+            <p className="mb-8 text-sm leading-relaxed text-foreground">
               I'm currently open to new opportunities and collaborations. Feel
               free to reach out if you'd like to work together.
             </p>
