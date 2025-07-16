@@ -2,17 +2,25 @@ export const user = {
     name: "Himanshu Suthar",
     email: "himanshuforpro@gmail.com",
     phone: "+91 9876543210",
-    github: "https://github.com/alternativehimanshu",
+    github: "https://github.com/humansooo",
     linkedin: "https://www.linkedin.com/in/hmxnsu/",
 }
 
 export const experiences = [
+    {
+        year: 'JUN 2025 - PRESENT',
+        title: 'Software Engineer',
+        company: 'Faebikes - Ev rentals',
+        description: 'Developing and maintaining React native and Next.js applications.',
+        link: 'https://play.google.com/store/apps/details?id=com.faebikes.faeapp&hl=en_IN/',
+    },
     {
         year: 'DEC 2024 - MAY 2025',
         title: 'Full Stack Developer',
         company: 'Placeaa',
         description:
             'Developed and maintained web applications using Next.js, NestJS, and TypeScript.',
+        link: 'https://placeaa.com/',
     },
     {
         year: ' DEC 2023 - DEC 2024',
@@ -20,6 +28,7 @@ export const experiences = [
         company: 'Ignition Nest Lab',
         description:
             'Developed and maintained web applications using Next.js, React Native, NestJS, and TypeScript.',
+        link: 'https://ignition-nest-labs.vercel.app/',
     },
     {
         year: '2023',

@@ -38,7 +38,7 @@ export default function Navbar() {
         const element = document.getElementById(section)
         if (element) {
           const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
+          return rect.top <= 120 && rect.bottom >= 120
         }
         return false
       })
@@ -50,12 +50,11 @@ export default function Navbar() {
       // Handle navbar visibility based on scroll direction
       const currentScrollY = window.scrollY
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down & past initial threshold
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling down - hide navbar with lower threshold
         setIsVisible(false)
-        console.log('Scrolling down, hiding navbar')
       } else {
-        // Scrolling up
+        // Scrolling up - show navbar
         setIsVisible(true)
       }
 
@@ -81,10 +80,10 @@ export default function Navbar() {
     const targetElement = document.getElementById(targetId)
 
     if (targetElement) {
-      const offsetTop = targetElement.offsetTop - 80
-      window.scrollTo({
-        top: offsetTop,
+      // Use native smooth scroll with proper offset
+      targetElement.scrollIntoView({
         behavior: 'smooth',
+        block: 'start',
       })
     }
   }
@@ -155,7 +154,7 @@ export default function Navbar() {
       >
         <div
           className={cn(
-            'mx-auto flex h-20 max-w-7xl items-center justify-between relative px-8 max-md:justify-center',
+            'mx-auto flex h-20 lg:max-w-[40%] items-center justify-between relative px-8 max-md:justify-center',
             isMobile ? 'px-4' : 'px-8'
           )}
         >

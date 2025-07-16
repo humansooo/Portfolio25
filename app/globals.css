@@ -118,6 +118,21 @@ input[type='button'] {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Accounts for fixed navbar height */
+}
+
+/* Improve smooth scroll performance */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* For users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Custom scrollbar */

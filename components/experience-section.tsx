@@ -1,6 +1,7 @@
 import { experiences } from '@/constants/data'
 import { Dot } from 'lucide-react'
 import { FadeInWhenVisible } from './animate'
+import ExpLinkTitle from './ui/exp-link-title'
 
 export default function ExperienceSection() {
   return (
@@ -17,17 +18,12 @@ export default function ExperienceSection() {
             >
               <div className="w-full">
                 <h3 className="mb-2 w-full flex items-center justify-between text-lg font-medium text-foreground">
-                  <div
-                    role="button"
-                    className="flex items-center gap-2"
-                  >
-                    {exp.title}
-                  </div>
+                  <ExpLinkTitle title={exp.title} link={exp.link} />
                   <div className="text-xs text-right font-medium text-foreground">
                     {exp.year}
                   </div>
                 </h3>
-                <p className="mb-3 text-sm text-foreground">{exp.company}</p>
+                <p className="mb-0 text-sm font-semibold text-foreground">{exp.company}</p>
                 <p className="text-sm leading-relaxed text-foreground">
                   {exp.description}
                 </p>

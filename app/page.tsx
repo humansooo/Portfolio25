@@ -10,35 +10,20 @@ export default async function Home() {
   return (
     <div className="min-h-screen min-w-screen outline bg-background overflow-x-hidden">
       <Navbar />
-      <main className="mx-auto lg:max-w-[50%] overflow-x-hidden z-10 px-8">
-        <div
-          id="about"
-          className="scroll-mt-20"
-        >
+      <main className="mx-auto lg:max-w-[40%] overflow-x-hidden z-10 px-8">
+        <div id="about">
           <AboutSection />
         </div>
-        <div
-          id="experience"
-          className="scroll-mt-20"
-        >
+        <div id="experience">
           <ExperienceSection />
         </div>
-        <div
-          id="projects"
-          className="scroll-mt-20"
-        >
+        <div id="projects">
           <ProjectsSection />
         </div>
-        <div
-          id="skills"
-          className="scroll-mt-20"
-        >
+        <div id="skills">
           <SkillsSection />
         </div>
-        <div
-          id="contact"
-          className="scroll-mt-20"
-        >
+        <div id="contact">
           <ContactSection />
         </div>
       </main>
