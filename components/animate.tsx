@@ -1,11 +1,11 @@
-'use client'
-import { motion, HTMLMotionProps } from 'framer-motion'
-import React from 'react'
+"use client";
+import { motion, HTMLMotionProps } from "framer-motion";
+import React from "react";
 
-interface FadeInWhenVisibleProps extends HTMLMotionProps<'div'> {
-  children: React.ReactNode
-  delay?: number
-  repeat?: boolean
+interface FadeInWhenVisibleProps extends HTMLMotionProps<"div"> {
+  children: React.ReactNode;
+  delay?: number;
+  repeat?: boolean;
 }
 
 export const FadeInWhenVisible = ({
@@ -16,12 +16,12 @@ export const FadeInWhenVisible = ({
 }: FadeInWhenVisibleProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, filter: 'blur(10px)' }}
-      whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+      initial={{ opacity: 0, filter: "blur(10px)" }}
+      whileInView={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.6, delay }}
       {...props}
     >
       {children}
     </motion.div>
-  )
-}
+  );
+};

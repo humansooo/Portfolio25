@@ -1,8 +1,8 @@
-import { projects } from '@/constants/data'
-import { Link2 } from 'lucide-react'
-import Image from 'next/image'
-import { FadeInWhenVisible } from './animate'
-import Link from 'next/link'
+import { projects } from "@/constants/data";
+import { Link2 } from "lucide-react";
+import Image from "next/image";
+import { FadeInWhenVisible } from "./animate";
+import Link from "next/link";
 
 export default function ProjectsSection() {
   return (
@@ -57,5 +57,5 @@ export default function ProjectsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import { Montserrat } from "next/font/google"
-import type { Config } from "tailwindcss"
+import { Montserrat } from "next/font/google";
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
@@ -77,14 +77,61 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "animate-grain": {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "10%": { transform: "translate(-5%, -10%)" },
+          "20%": { transform: "translate(-15%, -20%)" },
+          "30%": { transform: "translate(-5%, -10%)" },
+          "40%": { transform: "translate(-15%, -20%)" },
+          "50%": { transform: "translate(-5%, -10%)" },
+          "60%": { transform: "translate(-15%, -20%)" },
+          "70%": { transform: "translate(-5%, -10%)" },
+          "80%": { transform: "translate(-15%, -20%)" },
+          "90%": { transform: "translate(-5%, -10%)" },
+          "100%": { transform: "translate(-15%, -20%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      textShadow: {
+        gloom:
+          "0 0 8px currentColor, 0 0 16px currentColor, 0 0 24px currentColor",
+        hazy: "0 0 4px currentColor, 0 0 8px currentColor",
+        "gloom-strong":
+          "0 0 12px currentColor, 0 0 24px currentColor, 0 0 36px currentColor, 0 0 48px currentColor",
+      },
+      backdropBlur: {
+        hazy: "8px",
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities }: any) {
+      const newUtilities = {
+        ".text-shadow-gloom": {
+          textShadow:
+            "0 0 8px currentColor, 0 0 16px currentColor, 0 0 24px currentColor",
+          filter: "blur(0.3px)",
+          opacity: "0.85",
+        },
+        ".text-shadow-hazy": {
+          textShadow: "0 0 4px currentColor, 0 0 8px currentColor",
+          filter: "blur(0.2px)",
+          opacity: "0.9",
+        },
+        ".text-shadow-gloom-strong": {
+          textShadow:
+            "0 0 12px currentColor, 0 0 24px currentColor, 0 0 36px currentColor, 0 0 48px currentColor",
+          filter: "blur(0.5px)",
+          opacity: "0.8",
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
+} satisfies Config;
 
-export default config
+export default config;

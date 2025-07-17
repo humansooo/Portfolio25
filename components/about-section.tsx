@@ -1,7 +1,7 @@
-import { user } from '@/constants/data'
-import { motion } from 'motion/react'
-import { FadeInWhenVisible } from './animate'
-import { EasterEgg } from './animations'
+import { user } from "@/constants/data";
+import { motion } from "motion/react";
+import { FadeInWhenVisible } from "./animate";
+import { EasterEgg } from "./animations";
 export default function AboutSection() {
   return (
     <section className="flex min-h-screen items-center justify-center">
@@ -15,10 +15,7 @@ export default function AboutSection() {
             <br />
             a full-Stack developer specialized in
             <br />
-            <span
-              role="button"
-              className="font-geist-mono font-black"
-            >
+            <span role="button" className="font-geist-mono font-black">
               React Native & Web Development
             </span>
             .
@@ -26,12 +23,9 @@ export default function AboutSection() {
             <br />
             connect with people with
             <br />
-            <span
-              role="button"
-              className="font-geist-mono font-bold"
-            >
+            <span role="button" className="font-geist-mono font-bold">
               fresh and distinctive
-            </span>{' '}
+            </span>{" "}
             approach.
           </h1>
         </div>
@@ -40,5 +34,5 @@ export default function AboutSection() {
         </div> */}
       </FadeInWhenVisible>
     </section>
-  )
+  );
 }

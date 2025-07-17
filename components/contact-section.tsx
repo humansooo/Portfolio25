@@ -1,34 +1,34 @@
-'use client'
+"use client";
 
-import type React from 'react'
+import type React from "react";
 
-import { useState } from 'react'
-import { user } from '@/constants/data'
-import Link from 'next/link'
-import { toast } from 'sonner'
-import { FadeInWhenVisible } from './animate'
-import { LucidePhone, Mail, PhoneCall } from 'lucide-react'
+import { useState } from "react";
+import { user } from "@/constants/data";
+import Link from "next/link";
+import { toast } from "sonner";
+import { FadeInWhenVisible } from "./animate";
+import { LucidePhone, Mail, PhoneCall } from "lucide-react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    setFormData({ name: '', email: '', message: '' })
-    toast('Thank you for your message!')
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setFormData({ name: "", email: "", message: "" });
+    toast("Thank you for your message!");
+  };
 
   return (
     <section className="py-24">
@@ -49,10 +49,7 @@ export default function ContactSection() {
                   className="flex items-center gap-2"
                 >
                   <span className="mr-2">
-                    <Mail
-                      fill="currentColor"
-                      size={12}
-                    />
+                    <Mail fill="currentColor" size={12} />
                   </span>
                   {user.email}
                 </Link>
@@ -63,20 +60,14 @@ export default function ContactSection() {
                   className="flex items-center gap-2"
                 >
                   <span className="mr-2">
-                    <PhoneCall
-                      fill="currentColor"
-                      size={12}
-                    />
+                    <PhoneCall fill="currentColor" size={12} />
                   </span>
                   call
                 </Link>
               </p>
             </div>
           </div>
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6 hidden"
-          >
+          <form onSubmit={handleSubmit} className="space-y-6 hidden">
             <div>
               <input
                 type="text"
@@ -120,5 +111,5 @@ export default function ContactSection() {
         </div>
       </FadeInWhenVisible>
     </section>
-  )
+  );
 }

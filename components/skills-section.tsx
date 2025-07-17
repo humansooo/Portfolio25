@@ -1,20 +1,20 @@
-import { FadeInWhenVisible } from './animate'
+import { FadeInWhenVisible } from "./animate";
 
 export default function SkillsSection() {
   const skills = [
-    'JavaScript',
-    'TypeScript',
-    'React',
-    'React Native',
-    'Next.js',
-    'Node.js',
-    'Express',
-    'MongoDB',
-    'PostgreSQL',
-    'Git',
-    'Figma',
-    'Tailwind CSS',
-  ]
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "React Native",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "PostgreSQL",
+    "Git",
+    "Figma",
+    "Tailwind CSS",
+  ];
 
   return (
     <section className="py-24">
@@ -35,5 +35,5 @@ export default function SkillsSection() {
         </div>
       </FadeInWhenVisible>
     </section>
-  )
+  );
 }

@@ -1,88 +1,82 @@
-'use client'
+"use client";
 
-import type React from 'react'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import {
-  Briefcase,
-  Mail,
-  User,
-  Github,
-  XIcon,
-} from 'lucide-react'
-import { user } from '@/constants/data'
-import { useIsMobile } from '@/hooks/use-mobile'
-import { cn } from '@/lib/utils'
+import type React from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Briefcase, Mail, User, Github, XIcon } from "lucide-react";
+import { user } from "@/constants/data";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 const navItems = [
-  { name: 'Work', href: '#experience', icon: <Briefcase size={16} /> },
-  { name: 'About', href: '#about', icon: <User size={16} /> },
-  { name: 'Contact', href: '#contact', icon: <Mail size={16} /> },
-]
+  { name: "Work", href: "#experience", icon: <Briefcase size={16} /> },
+  { name: "About", href: "#about", icon: <User size={16} /> },
+  { name: "Contact", href: "#contact", icon: <Mail size={16} /> },
+];
 
 export default function Navbar() {
-  const isMobile = useIsMobile()
-  const [activeSection, setActiveSection] = useState('about')
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const isMobile = useIsMobile();
+  const [activeSection, setActiveSection] = useState("about");
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'projects', 'experience', 'skills', 'contact']
+      const sections = ["about", "projects", "experience", "skills", "contact"];
       const currentSection = sections.find((section) => {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 120 && rect.bottom >= 120
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 120 && rect.bottom >= 120;
         }
-        return false
-      })
+        return false;
+      });
 
       if (currentSection) {
-        setActiveSection(currentSection)
+        setActiveSection(currentSection);
       }
 
       // Handle navbar visibility based on scroll direction
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         // Scrolling down - hide navbar with lower threshold
-        setIsVisible(false)
+        setIsVisible(false);
       } else {
         // Scrolling up - show navbar
-        setIsVisible(true)
+        setIsVisible(true);
       }
 
-      setLastScrollY(currentScrollY)
-    }
+      setLastScrollY(currentScrollY);
+    };
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [lastScrollY])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   const handleMobileMenuToggle = () => {
-    setIsMobileOpen(!isMobileOpen)
-  }
+    setIsMobileOpen(!isMobileOpen);
+  };
 
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
-    e.preventDefault()
-    const targetId = href.substring(1)
-    const targetElement = document.getElementById(targetId)
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
       // Use native smooth scroll with proper offset
       targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
+        behavior: "smooth",
+        block: "start",
+      });
     }
-  }
+  };
 
   const MobileMenuBtn = () => {
     return (
@@ -95,21 +89,23 @@ export default function Navbar() {
             size={18}
             strokeWidth={2}
             className={cn(
-              'text-foreground transition-all  duration-300',
-              !isMobileOpen && 'rotate-[45deg]'
+              "text-foreground transition-all  duration-300",
+              !isMobileOpen && "rotate-[45deg]",
             )}
           />
         </button>
       </div>
-    )
-  }
+    );
+  };
 
   const MobileMenu = () => {
     return (
       <div
         className={cn(
-          'fixed inset-0 z-50 h-screen w-full bg-background/50 backdrop-blur-sm transition-all duration-[1000]',
-          isMobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
+          "fixed inset-0 z-50 h-screen w-full bg-background/50 backdrop-blur-sm transition-all duration-[1000]",
+          isMobileOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-full",
         )}
       >
         <nav className="flex flex-col items-center justify-center h-full space-y-4 p-4">
@@ -118,8 +114,8 @@ export default function Navbar() {
               key={item.name}
               href={item.href}
               onClick={(e) => {
-                handleSmoothScroll(e, item.href)
-                handleMobileMenuToggle()
+                handleSmoothScroll(e, item.href);
+                handleMobileMenuToggle();
               }}
               className="flex items-center text-4xl font-bytesized text-foreground transition-colors hover:text-foreground"
             >
@@ -136,28 +132,25 @@ export default function Navbar() {
           </a>
         </nav>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <>
       <MobileMenu />
       <header
         className={cn(
-          'fixed top-0 z-50 w-full bg-background/50 backdrop-blur-sm transition-transform duration-300',
-          isVisible ? 'translate-y-0' : '-translate-y-full'
+          "fixed top-0 z-50 w-full bg-background/50 backdrop-blur-sm transition-transform duration-300",
+          isVisible ? "translate-y-0" : "-translate-y-full",
         )}
       >
         <div
           className={cn(
-            'mx-auto flex h-20 lg:max-w-[640px] items-center justify-between relative px-8 max-md:justify-center',
-            isMobile ? 'px-4' : 'px-8'
+            "mx-auto flex h-20 lg:max-w-[640px] items-center justify-between relative px-8 max-md:justify-center",
+            isMobile ? "px-4" : "px-8",
           )}
         >
-          <Link
-            href="/"
-            className="text-xl font-bytesized text-foreground"
-          >
+          <Link href="/" className="text-xl font-bytesized text-foreground">
             Himanshu
           </Link>
 
@@ -182,10 +175,10 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              'text-sm font-medium text-foreground transition-colors hover:text-foreground max-md:hidden'
+              "text-sm font-medium text-foreground transition-colors hover:text-foreground max-md:hidden",
             )}
           >
-            GitHub{' '}
+            GitHub{" "}
             <Github
               className="inline-block"
               size={16}
@@ -196,5 +189,5 @@ export default function Navbar() {
         </div>
       </header>
     </>
-  )
+  );
 }

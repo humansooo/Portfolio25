@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { motion } from 'motion/react'
+import { motion } from "motion/react";
 
 export const EasterEgg = () => {
   return (
@@ -12,12 +12,12 @@ export const EasterEgg = () => {
       transition={{
         duration: 1000,
         delay: 1,
-        ease: 'linear',
+        ease: "linear",
         repeat: Infinity,
-        repeatType: 'loop',
+        repeatType: "loop",
       }}
     >
       (*)
     </motion.div>
-  )
-}
+  );
+};
