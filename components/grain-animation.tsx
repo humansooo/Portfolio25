@@ -13,7 +13,7 @@ export default function GrainAnimation() {
           width: "300%",
           top: 0,
           left: 0,
-          //   animation: "animate-grain 8s steps(10) infinite",
+          animation: "animate-grain 8s steps(10) infinite",
         }}
       />
       <style jsx global>{`
