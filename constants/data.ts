@@ -1,7 +1,7 @@
 export const user = {
     name: "Himanshu Suthar",
     email: "himanshuforpro@gmail.com",
-    phone: "+91 9876543210",
+    phone: "+91 8320330695",
     github: "https://github.com/humansooo",
     linkedin: "https://www.linkedin.com/in/hmxnsu/",
 }
