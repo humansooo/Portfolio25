@@ -2,20 +2,34 @@
 
 import { motion } from "motion/react";
 
-export const EasterEgg = () => {
+export const EasterEgg = (props: { rotate?: number }) => {
   return (
     <motion.div
-      className="text-3xl font-bytesized text-foreground"
-      animate={{
-        rotate: [0, 360],
+      className="text-[300px] absolute z-[9999] font-bytesized text-foreground  dark:opacity-[0.05] opacity-[0.1] pointer-events-none"
+      style={{
+        top: "50%",
+        left: "50%",
+        filter: "blur(20px)",
+        rotate: `${props.rotate ? props.rotate : 0}deg`,
+        scale: 10,
       }}
-      transition={{
-        duration: 1000,
-        delay: 1,
-        ease: "linear",
-        repeat: Infinity,
-        repeatType: "loop",
-      }}
+      // initial={{
+      //   scale: 20,
+      // }}
+      // animate={{
+      //   scale: 10,
+      //   rotate: [
+      //     `${props.rotate ? props.rotate : 0}deg`,
+      //     `${props.rotate ? props.rotate + 10 : 10}deg`,
+      //   ],
+      // }}
+      // transition={{
+      //   type: "spring",
+      //   duration: 2000,
+      //   ease: "easeInOut",
+      //   repeat: Infinity,
+      //   repeatType: "reverse",
+      // }}
     >
       (*)
     </motion.div>

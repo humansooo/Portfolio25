@@ -95,13 +95,6 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      textShadow: {
-        gloom:
-          "0 0 8px currentColor, 0 0 16px currentColor, 0 0 24px currentColor",
-        hazy: "0 0 4px currentColor, 0 0 8px currentColor",
-        "gloom-strong":
-          "0 0 12px currentColor, 0 0 24px currentColor, 0 0 36px currentColor, 0 0 48px currentColor",
-      },
       backdropBlur: {
         hazy: "8px",
       },
@@ -127,6 +120,47 @@ const config = {
             "0 0 12px currentColor, 0 0 24px currentColor, 0 0 36px currentColor, 0 0 48px currentColor",
           filter: "blur(0.5px)",
           opacity: "0.8",
+        },
+        ".hazy": {
+          textShadow:
+            "0 0 8px #ff00cc, 0 0 16px #3333ff, 0 0 24px #00ffcc, 0 0 32px #ffcc00",
+          // textShadow: "0 0 36px currentColor, 0 0 36px currentColor"
+          filter: "blur(10px)",
+          opacity: "0.05",
+        },
+        ".super-gloom": {
+          textShadow: "0 0 30px currentColor",
+          filter: "blur(0.3px)",
+          opacity: "0.85",
+        },
+        ".gloom": {
+          // textShadow: "0 0 45px currentColor",
+          textShadow: "0 0 45px currentColor",
+          filter: "blur(0.4px)",
+          opacity: "0.8",
+        },
+        ".sodo": {
+          textShadow: " 10px 10px 10px currentColor",
+          filter: "blur(0.3px)",
+          opacity: "0.9",
+        },
+        ".sodo-half": {
+          textShadow: " 0 0 5px currentColor",
+          filter: "blur(0.1px)",
+          opacity: "0.9",
+        },
+        ".sodo-box": {
+          boxShadow: " 5px 5px 5px currentColor",
+          filter: "blur(0.3px)",
+          backdropFilter: "blur(0.1px)",
+          backgroundColor: "rgba(0, 0, 0, 0)",
+          opacity: "0.9",
+        },
+        ".sodo-box-half": {
+          boxShadow: " 0 0 300px currentColor",
+          filter: "blur(0.3px)",
+          backdropFilter: "blur(0.3px)",
+          opacity: "0.4",
         },
       };
       addUtilities(newUtilities);

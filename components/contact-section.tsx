@@ -17,7 +17,7 @@ export default function ContactSection() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -33,7 +33,7 @@ export default function ContactSection() {
   return (
     <section className="py-24">
       <FadeInWhenVisible className="w-full">
-        <h2 className="mb-16 text-center text-2xl font-light  text-foreground">
+        <h2 className="mb-16 font-bytesized text-2xl font-light text-foreground gloom">
           Contact
         </h2>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">

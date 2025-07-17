@@ -7,7 +7,7 @@ export default function ExperienceSection() {
   return (
     <section className="py-24">
       <FadeInWhenVisible className="w-full">
-        <h2 className="mb-16 text-center text-2xl font-light text-foreground">
+        <h2 className="mb-16 font-bytesized text-2xl font-light text-foreground gloom">
           Experience
         </h2>
         <div className="space-y-12">

@@ -8,7 +8,7 @@ export default function ProjectsSection() {
   return (
     <section className="py-24">
       <div className="w-full">
-        <h2 className="mb-16 text-center text-2xl font-light text-foreground">
+        <h2 className="mb-16 font-bytesized text-2xl font-light text-foreground gloom">
           Projects
         </h2>
         <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2">

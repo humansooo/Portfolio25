@@ -12,6 +12,7 @@ const navItems = [
   { name: "Work", href: "#experience", icon: <Briefcase size={16} /> },
   { name: "About", href: "#about", icon: <User size={16} /> },
   { name: "Contact", href: "#contact", icon: <Mail size={16} /> },
+  { name: "github", href: user.github, icon: <Github size={16} /> },
 ];
 
 export default function Navbar() {
@@ -63,7 +64,7 @@ export default function Navbar() {
 
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
+    href: string
   ) => {
     e.preventDefault();
     const targetId = href.substring(1);
@@ -90,7 +91,7 @@ export default function Navbar() {
             strokeWidth={2}
             className={cn(
               "text-foreground transition-all  duration-300",
-              !isMobileOpen && "rotate-[45deg]",
+              !isMobileOpen && "rotate-[45deg]"
             )}
           />
         </button>
@@ -105,7 +106,7 @@ export default function Navbar() {
           "fixed inset-0 z-50 h-screen w-full bg-background/50 backdrop-blur-sm transition-all duration-[1000]",
           isMobileOpen
             ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-full",
+            : "opacity-0 -translate-y-full"
         )}
       >
         <nav className="flex flex-col items-center justify-center h-full space-y-4 p-4">
@@ -122,14 +123,6 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <a
-            href={user.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-4xl font-bytesized text-foreground transition-colors hover:text-foreground"
-          >
-            GitHub
-          </a>
         </nav>
       </div>
     );
@@ -140,28 +133,36 @@ export default function Navbar() {
       <MobileMenu />
       <header
         className={cn(
-          "fixed top-0 z-50 w-full bg-background/50 backdrop-blur-sm transition-transform duration-300",
-          isVisible ? "translate-y-0" : "-translate-y-full",
+          "fixed top-0 z-50 w-full  backdrop-blur-md transition-transform duration-300",
+          isVisible ? "translate-y-0" : "-translate-y-full"
         )}
       >
         <div
           className={cn(
             "mx-auto flex h-20 lg:max-w-[640px] items-center justify-between relative px-8 max-md:justify-center",
-            isMobile ? "px-4" : "px-8",
+            isMobile ? "px-4" : "px-8"
           )}
         >
-          <Link href="/" className="text-xl font-bytesized text-foreground">
+          <Link
+            href="/"
+            className="text-xl font-bytesized text-foreground sodo"
+          >
             Himanshu
           </Link>
 
           {!isMobile ? (
-            <nav className="flex max-md:hidden space-x-2">
+            <nav className="flex max-md:hidden  space-x-2 text-shadow-hazy">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleSmoothScroll(e, item.href)}
-                  className="transition-colors hover:bg-foreground/10 rounded-xl p-2"
+                  style={
+                    {
+                      // boxShadow: " 5px 5px 5px #6666",
+                    }
+                  }
+                  className="transition-all  hover:bg-[#4441] rounded-xl p-2  sodo shadow-[inset_-5px_5px_-5px_currentColor] hover:shadow-[inset_7px_7px_7px_#6663] shadow-foreground/90"
                 >
                   {item.icon}
                 </Link>
@@ -170,22 +171,6 @@ export default function Navbar() {
           ) : (
             <MobileMenuBtn />
           )}
-          <a
-            href={user.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              "text-sm font-medium text-foreground transition-colors hover:text-foreground max-md:hidden",
-            )}
-          >
-            GitHub{" "}
-            <Github
-              className="inline-block"
-              size={16}
-              color="currentColor"
-              strokeWidth={2}
-            />
-          </a>
         </div>
       </header>
     </>

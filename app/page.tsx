@@ -5,13 +5,14 @@ import Navbar from "@/components/navbar";
 import ProjectsSection from "@/components/projects-section";
 import SkillsSection from "@/components/skills-section";
 import GrainAnimation from "@/components/grain-animation";
+import { EasterEgg } from "@/components/animations";
 
 export default async function Home() {
   return (
-    <div className="relative min-h-screen min-w-screen outline bg-background overflow-x-hidden">
+    <div className="relative min-h-screen min-w-screen bg-background overflow-hidden">
       <GrainAnimation />
       <Navbar />
-      <main className="mx-auto lg:max-w-[640px] overflow-x-hidden z-10 px-8">
+      <main className="mx-auto lg:max-w-[640px] z-10 px-8">
         <div id="about">
           <AboutSection />
         </div>
