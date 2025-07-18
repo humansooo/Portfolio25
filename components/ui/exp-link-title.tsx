@@ -8,12 +8,11 @@ export default function ExpLinkTitle({
   link?: string;
 }) {
   return (
-    <div
-      role="button"
+    <button
       onClick={() => link && window.open(link, "_blank")}
-      className="flex items-center gap-2 font-semibold"
+      className="flex items-center gap-2 font-semibold font-racing-sans-one"
     >
       {title}
-    </div>
+    </button>
   );
 }

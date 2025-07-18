@@ -162,7 +162,7 @@ export default function Navbar() {
                       // boxShadow: " 5px 5px 5px #6666",
                     }
                   }
-                  className="transition-all  hover:bg-[#4441] rounded-xl p-2  sodo shadow-[inset_9px_9px_9px_#60606030] hover:shadow-[inset_7px_7px_7px_#6663] "
+                  className="transition-all duration-500 hover:px-3.5 hover:bg-[#4441] rounded-xl p-2  sodo shadow-[inset_4px_4px_4px_#60606030] hover:shadow-[inset_7px_7px_7px_#6664] "
                 >
                   {item.icon}
                 </Link>

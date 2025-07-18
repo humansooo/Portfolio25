@@ -16,7 +16,7 @@ export default function ExperienceSection() {
               <div className="w-full">
                 <h3 className="mb-3 w-full flex items-center justify-between text-base font-bold text-foreground/80 ">
                   <ExpLinkTitle title={exp.title} link={exp.link} />
-                  <p className="text-xs text-right font-racing-sans-one text-foreground/60 ">
+                  <p className="text-xs text-right text-foreground/90 font-geist-mono">
                     {exp.year}
                   </p>
                 </h3>
