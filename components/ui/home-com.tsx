@@ -7,7 +7,7 @@ export default function HomeCom() {
         onClick={() => {
           window.open("mailto:himanshuforpro@gmail.com", "_blank");
         }}
-        className="bg-foreground/10 border border-dashed text-sm font-black font-geist-mono rounded-xl p-2 sodo shadow-[inset_5px_5px_5px_currentColor] shadow-foreground/20 transition-all duration-700   hover:shadow-[inset_10px_10px_10px_#667] hover:bg-foreground/20"
+        className=" border border-foreground/10 border-dashed text-sm font-black font-geist-mono rounded-xl p-2 sodo shadow-[inset_5px_5px_5px_currentColor] shadow-foreground/20 transition-all duration-700   hover:shadow-[inset_10px_10px_10px_#667] hover:bg-foreground/20"
       >
         Mail me
       </button>
