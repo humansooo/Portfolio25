@@ -12,7 +12,7 @@ export const experiences = [
     title: "Software Engineer",
     company: "Faebikes - Ev rentals",
     description:
-      "Developing and maintaining React native and Next.js applications.",
+      "Developing and maintaining React native and Next.js applications. <br /> <ul> <li>Enhancing performance and user experience</li> </ul>",
     link: "https://play.google.com/store/apps/details?id=com.faebikes.faeapp&hl=en_IN/",
   },
   {
@@ -20,7 +20,7 @@ export const experiences = [
     title: "Full Stack Developer",
     company: "Placeaa",
     description:
-      "Developed and maintained web applications using Next.js, NestJS, and TypeScript.",
+      "Developed and maintained web applications using Next.js, NestJS, and TypeScript. <ul> <li>Refactored and optimized the codebase for better performance and maintainability</li> </ul>",
     link: "https://placeaa.com/",
   },
   {
@@ -28,7 +28,7 @@ export const experiences = [
     title: "Full Stack Developer",
     company: "Ignition Nest Lab",
     description:
-      "Developed and maintained web applications using Next.js, React Native, NestJS, and TypeScript.",
+      "Developed and maintained web applications using Next.js, React Native, NestJS, and TypeScript. <br /> <ul> <li>Developed <b>Apgyc - Campus Delivery App</b></li> <li>Build <b>Growthkar</b> and various other projects</li> <li>Used NestJS for backend and Prisma for database</li> </ul>",
     link: "https://ignition-nest-labs.vercel.app/",
   },
   {
@@ -36,7 +36,7 @@ export const experiences = [
     title: "React Native Developer",
     company: "Medref - healthcare App",
     description:
-      "Build a healthcare app using React Native, integrating features like appointment scheduling, patient management, and telemedicine functionalities.",
+      "Build a healthcare app using React Native. <br /> <ul> <li>Integrating features like appointment scheduling, patient management, and telemedicine functionalities</li> <li>Used React Native for frontend and Firebase for backend</li> </ul>",
   },
 ];
 

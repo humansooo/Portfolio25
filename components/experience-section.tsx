@@ -23,7 +23,26 @@ export default function ExperienceSection() {
                 <p className="mb-1 text-sm font-semibold text-foreground/80">
                   {exp.company}
                 </p>
-                <p className="text-sm text-foreground/80">{exp.description}</p>
+                <div className="text-sm text-foreground/80 leading-relaxed prose prose-invert">
+                  {/* Render HTML safely */}
+                  {exp.description.includes("<") ? (
+                    <div
+                      className="prose prose-invert prose-ul:list-disc prose-ul:pl-5"
+                      dangerouslySetInnerHTML={{
+                        __html: exp.description
+                          .replace(/<br\s*\/?>/g, "<br />")
+                          .replace(/<ul>/g, "<ul class='list-disc pl-5'>")
+                          .replace(/<\/ul>/g, "</ul>")
+                          .replace(/<li>/g, "<li class='mb-1'>")
+                          .replace(/<\/li>/g, "</li>")
+                          .replace(/<b>/g, "<b class='font-bold'>")
+                          .replace(/<\/b>/g, "</b>"),
+                      }}
+                    />
+                  ) : (
+                    <span>{exp.description}</span>
+                  )}
+                </div>
               </div>
             </div>
           ))}
