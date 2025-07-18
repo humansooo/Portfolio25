@@ -8,7 +8,7 @@ export default function Graphic() {
     offset: ["start start", "end end"],
   });
   return (
-    <div className="fixed bottom-[-300px] lg:block hidden z-[0] right-[-300px]">
+    <div className="fixed bottom-[-300px] lg:block hidden z-0 right-[-300px]">
       <motion.div
         initial={{
           opacity: 0,

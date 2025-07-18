@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 export const EasterEgg = (props: { rotate?: number }) => {
   return (
     <motion.div
-      className="text-[300px] absolute z-[0] font-bytesized text-foreground  dark:opacity-[0.05] opacity-[0.2] pointer-events-none"
+      className="text-[300px] absolute z-0 font-bytesized text-foreground  dark:opacity-[0.05] opacity-[0.2] pointer-events-none"
       style={{
         top: "50%",
         left: "50%",

@@ -76,7 +76,7 @@ export default function ContactSection() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border-b border-foreground bg-transparent pb-2 text-sm text-foreground placeholder-foreground focus:border-foreground focus:outline-none"
+                className="w-full border-b border-foreground bg-transparent pb-2 text-sm text-foreground placeholder-foreground focus:border-foreground focus:outline-hidden"
               />
             </div>
             <div>
@@ -87,7 +87,7 @@ export default function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border-b border-foreground bg-transparent pb-2 text-sm text-foreground placeholder-foreground focus:border-foreground focus:outline-none"
+                className="w-full border-b border-foreground bg-transparent pb-2 text-sm text-foreground placeholder-foreground focus:border-foreground focus:outline-hidden"
               />
             </div>
             <div>
@@ -98,7 +98,7 @@ export default function ContactSection() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full border-b border-foreground bg-transparent pb-2 text-sm text-foreground placeholder-foreground focus:border-foreground focus:outline-none resize-none"
+                className="w-full border-b border-foreground bg-transparent pb-2 text-sm text-foreground placeholder-foreground focus:border-foreground focus:outline-hidden resize-none"
               />
             </div>
             <button

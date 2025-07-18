@@ -5,7 +5,7 @@ export default function GrainAnimation() {
     <>
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-[999999999] opacity-[0.07] dark:opacity-[0.05] dark:bg-blend-multiply"
+        className="pointer-events-none fixed inset-0 z-999999999 opacity-[0.07] dark:opacity-[0.05] dark:bg-blend-multiply"
         style={{
           backgroundImage:
             'url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png")',

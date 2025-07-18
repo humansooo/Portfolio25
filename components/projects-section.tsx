@@ -24,7 +24,7 @@ export default function ProjectsSection() {
                   draggable={false}
                   width={500}
                   height={500}
-                  className="object-cover transition-transform duration-500 rounded-sm hover:scale-105 aspect-[8/5]"
+                  className="object-cover transition-transform duration-500 rounded-sm hover:scale-105 aspect-8/5"
                 />
               </div>
               <div className="">
