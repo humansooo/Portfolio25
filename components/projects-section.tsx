@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function ProjectsSection() {
   return (
-    <section className="py-24">
+    <section className="">
       <div className="w-full">
         <h2 className="mb-16 font-bytesized text-2xl font-light text-foreground gloom">
           Projects

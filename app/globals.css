@@ -58,47 +58,14 @@
     --chart-5: 340 75% 55%;
   }
   body {
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 400;
     line-height: 1.6;
     @apply bg-background;
   }
-  .cursor_pointer {
-    position: fixed;
-    inset: 50% auto auto 50%;
-    transform: translate(-50%, -50%);
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
-    border: 2px solid transparent;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6),
-      0 16px 32px rgba(0, 0, 0, 0.12);
-    backdrop-filter: url(#frosted);
-    display: grid;
-    place-items: center;
-    pointer-events: none;
-    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-      height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    outline: 0;
-  }
-
-  .cursor_pointer--link-hover {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .cursor_pointer::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    @apply bg-primary;
-    border-radius: 10px;
-  }
 
   em {
-    font-family: var(--font-crimson), serif;
+    font-family: var(--font-inter), serif;
     font-style: italic;
   }
 }

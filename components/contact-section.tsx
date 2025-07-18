@@ -31,7 +31,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-24">
+    <section className="">
       <FadeInWhenVisible className="w-full">
         <h2 className="mb-16 font-bytesized text-2xl font-light text-foreground gloom">
           Contact

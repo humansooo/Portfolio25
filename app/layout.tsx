@@ -5,15 +5,12 @@ import {
   Inter,
   Geist_Mono,
   Montserrat,
-  DM_Serif_Text,
-  Open_Sans,
+  Racing_Sans_One,
 } from "next/font/google";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeToggle } from "@/components/theme-toggle";
-import Head from "next/head";
-import CustomCursor from "@/components/custom-cursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +23,17 @@ const bytesized = localFont({
   variable: "--font-bytesized",
 });
 
+const bohme = localFont({
+  src: "../public/font/bohme/Bohme.ttf",
+  variable: "--font-bohme",
+});
+
+const racingSansOne = Racing_Sans_One({
+  subsets: ["latin"],
+  variable: "--font-racing-sans-one",
+  weight: ["400"],
+});
+
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
@@ -36,12 +44,6 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   weight: ["400", "500", "600", "700", "200", "300"],
-});
-
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
-  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -94,7 +96,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="32x32" />
       </head>
       <body
-        className={`${inter.variable} ${bytesized.variable} ${geistMono.variable} ${montserrat.variable} ${openSans.variable}
+        className={`${inter.variable} ${bytesized.variable} ${geistMono.variable} ${montserrat.variable} ${bohme.variable} ${racingSansOne.variable}
             antialiased overflow-x-hidden`}
       >
         <ThemeProvider

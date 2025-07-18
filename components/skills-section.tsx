@@ -18,7 +18,7 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section className="py-24 relative">
+    <section className="relative">
       <EasterEgg rotate={260} />
       <FadeInWhenVisible className="w-full">
         <h2 className="mb-16 font-bytesized text-2xl font-light text-foreground gloom">

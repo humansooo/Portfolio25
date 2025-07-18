@@ -12,7 +12,7 @@ export default async function Home() {
     <div className="relative min-h-screen min-w-screen bg-background overflow-hidden">
       <GrainAnimation />
       <Navbar />
-      <main className="mx-auto lg:max-w-[640px] z-10 px-8">
+      <main className="mx-auto space-y-24 pt-[40vh] pb-[20vh] lg:max-w-[640px] z-10 px-8">
         <div id="about">
           <AboutSection />
         </div>

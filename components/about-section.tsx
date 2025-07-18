@@ -5,9 +5,9 @@ import { EasterEgg } from "./animations";
 import HomeCom from "./ui/home-com";
 export default function AboutSection() {
   return (
-    <section className="flex min-h-screen items-center relative justify-center">
+    <section className="flex items-center relative justify-center">
       <EasterEgg />
-      <FadeInWhenVisible className="w-full text-left">
+      <FadeInWhenVisible className="w-full text-left z-10">
         <div className="space-y-6">
           <h1 className="text-xl font-light  text-foreground md:text-xl lg:text-2xl">
             Hey, I'm {user.name},
@@ -16,7 +16,7 @@ export default function AboutSection() {
             <br />
             <span
               role="button"
-              className="font-geist-mono font-black sodo-half"
+              className="font-racing-sans-one font-light sodo-half text-3xl"
             >
               React Native & Web Development
             </span>
@@ -25,7 +25,10 @@ export default function AboutSection() {
             <br />
             connect with people with
             <br />
-            <span role="button" className="font-geist-mono font-bold sodo-half">
+            <span
+              role="button"
+              className="font-racing-sans-one font-bold sodo-half text-3xl"
+            >
               fresh and distinctive
             </span>{" "}
             approach.

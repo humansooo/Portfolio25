@@ -66,7 +66,8 @@ const config = {
         bytesized: ["var(--font-bytesized)"],
         "geist-mono": ["var(--font-geist-mono)"],
         montserrat: ["var(--font-montserrat)"],
-        "open-sans": ["var(--font-open-sans)"],
+        bohme: ["var(--font-bohme)"],
+        "racing-sans-one": ["var(--font-racing-sans-one)"],
       },
       keyframes: {
         "accordion-down": {
