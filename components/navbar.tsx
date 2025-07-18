@@ -9,8 +9,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { name: "Work", href: "#experience", icon: <Briefcase size={16} /> },
   { name: "About", href: "#about", icon: <User size={16} /> },
+  { name: "Work", href: "#experience", icon: <Briefcase size={16} /> },
   { name: "Contact", href: "#contact", icon: <Mail size={16} /> },
   { name: "github", href: user.github, icon: <Github size={16} /> },
 ];
@@ -162,7 +162,7 @@ export default function Navbar() {
                       // boxShadow: " 5px 5px 5px #6666",
                     }
                   }
-                  className="transition-all  hover:bg-[#4441] rounded-xl p-2  sodo shadow-[inset_-5px_5px_-5px_currentColor] hover:shadow-[inset_7px_7px_7px_#6663] shadow-foreground/90"
+                  className="transition-all  hover:bg-[#4441] rounded-xl p-2  sodo shadow-[inset_9px_9px_9px_#60606030] hover:shadow-[inset_7px_7px_7px_#6663] "
                 >
                   {item.icon}
                 </Link>

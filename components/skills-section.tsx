@@ -29,7 +29,7 @@ export default function SkillsSection() {
             <span
               key={index}
               role="button"
-              className="rounded-xl  border border-dashed border-foreground/10 px-4 py-2 sodo shadow-[inset_5px_5px_5px_currentColor] hover:shadow-[inset_7px_7px_7px_black] shadow-foreground/10 text-xs text-foreground  duration-700 transition-all"
+              className="rounded-xl  border border-dashed border-foreground/10 px-4 py-2 sodo shadow-[inset_5px_5px_5px_#6664] hover:shadow-[inset_7px_7px_7px_#667] text-xs text-foreground  duration-700 transition-all"
             >
               {skill}
             </span>

@@ -140,7 +140,7 @@ const config = {
           opacity: "0.8",
         },
         ".sodo": {
-          textShadow: " 10px 10px 10px currentColor",
+          textShadow: " 7px 7px 7px currentColor",
           filter: "blur(0.3px)",
           opacity: "0.9",
         },
