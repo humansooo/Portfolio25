@@ -103,7 +103,7 @@ export default function Navbar() {
     return (
       <div
         className={cn(
-          'bg-background/50 fixed inset-0 z-50 h-screen w-full backdrop-blur-xs transition-all duration-[1000]',
+          'bg-background/50 fixed inset-0 z-50 h-screen w-full backdrop-blur-sm transition-all duration-[1000]',
           isMobileOpen
             ? 'translate-y-0 opacity-100'
             : '-translate-y-full opacity-0',
@@ -133,7 +133,7 @@ export default function Navbar() {
       <MobileMenu />
       <header
         className={cn(
-          'fixed top-0 z-50 w-full backdrop-blur-md transition-transform duration-300',
+          'fixed top-0 z-50 w-full transition-transform duration-300',
           isVisible ? 'translate-y-0' : '-translate-y-full',
         )}
       >
