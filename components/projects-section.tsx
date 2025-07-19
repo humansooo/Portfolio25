@@ -15,7 +15,7 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <FadeInWhenVisible
               key={index}
-              className="border-border relative flex flex-col gap-3 border border-dashed p-3 md:gap-2 md:p-2"
+              className="border-border relative flex flex-col gap-3 border border-dashed p-2 pb-4"
             >
               <ProjectImageGallery
                 images={project.image}
@@ -36,11 +36,11 @@ export default function ProjectsSection() {
                     </Link>
                   )}
                 </h3>
-                <p className="text-foreground mt-3 flex flex-wrap gap-1 text-sm font-bold">
+                <p className="text-foreground mt-3 flex flex-wrap gap-2 text-sm font-bold">
                   {project.skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="bg-muted/80 text-foreground font-geist-mono rounded-md px-1.5 py-0.5 text-[10px] font-light shadow-[inset_2px_2px_2px_#6664] transition-all duration-500 hover:shadow-[inset_4px_4px_4px_#6664]"
+                      className="bg-muted/80 text-foreground/60 font-geist-mono rounded-md px-1.5 py-0.5 text-[10px] shadow-[inset_2px_2px_2px_#6664] transition-all duration-500 hover:shadow-[inset_4px_4px_4px_#6664]"
                     >
                       {skill}
                     </span>
