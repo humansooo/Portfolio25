@@ -10,7 +10,7 @@ const sizeVariants = {
   xs: 'px-2 py-1 text-[10px]',
   sm: 'px-3 py-1.5 text-xs',
   md: 'px-4 py-2 text-xs',
-  lg: 'px-6 py-3 text-sm',
+  lg: 'px-3 py-2 text-sm',
 }
 
 export function GlassButton({
@@ -22,7 +22,7 @@ export function GlassButton({
   return (
     <button
       className={cn(
-        'border-foreground/10 sodo text-foreground font-geist-mono rounded-xl border border-dashed shadow-[inset_5px_5px_5px_#6664] transition-all duration-700 hover:shadow-[inset_7px_7px_7px_#6676]',
+        'border-foreground/10 sodo text-foreground font-geist-mono rounded-xl border border-dashed shadow-[inset_5px_5px_5px_#6666] transition-all duration-700 hover:shadow-[inset_7px_7px_7px_#6676]',
         sizeVariants[size],
         className,
       )}
