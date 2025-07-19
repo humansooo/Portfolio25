@@ -28,7 +28,7 @@ export const experiences = [
     title: 'Full Stack Developer',
     company: 'Ignition Nest Lab',
     description:
-      'Developed and maintained web applications using Next.js, React Native, NestJS, and TypeScript. <br /> <ul> <li>Developed <b>Apgyc - Campus Delivery App</b></li> <li>Build <b>Growthkar</b> and various other projects</li> <li>Used NestJS for backend and Prisma for database</li> </ul>',
+      'Developed and maintained web applications using Next.js, React Native, NestJS, and TypeScript. <br /> <ul> <li>Developed <b>Apgyc - Campus Delivery App</b></li> <li>Developed <b>Parul Sevashram Hospital - Ecoach Platform</b> for training staff, conducting exams, and managing Learning Resources <ul><li>Used NestJS for backend and Prisma for database</li> <li>Used Next.js for frontend and Tailwind for styling</li> <li>Used Socket.io for real-time communication</li> <li>Used aws for hosting</li> </ul> </li> <li>Build <b>Growthkar</b> and various other projects</li> </ul>',
     link: 'https://ignition-nest-labs.vercel.app/',
   },
   {

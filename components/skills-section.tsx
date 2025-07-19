@@ -1,5 +1,6 @@
 import { FadeInWhenVisible } from './animate'
 import { EasterEgg } from './animations'
+import { GlassButton } from './ui/glass-button'
 
 export default function SkillsSection() {
   const skills = [
@@ -26,12 +27,7 @@ export default function SkillsSection() {
         </h2>
         <div className="flex flex-wrap items-center gap-4">
           {skills.map((skill, index) => (
-            <button
-              key={index}
-              className="border-foreground/10 sodo text-foreground font-geist-mono rounded-xl border border-dashed px-4 py-2 text-xs shadow-[inset_5px_5px_5px_#6664] transition-all duration-700 hover:shadow-[inset_7px_7px_7px_#6676]"
-            >
-              {skill}
-            </button>
+            <GlassButton key={index}>{skill}</GlassButton>
           ))}
         </div>
       </FadeInWhenVisible>

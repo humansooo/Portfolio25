@@ -17,8 +17,14 @@ export default function ProgressiveBlur({
         'pointer-events-none flex rotate-180 flex-col',
         props.className,
       )}
-      //   style={{ overflow: 'hidden', backgroundColor: 'var(--background)' }}
     >
+      {/* Background gradient layer */}
+      <div
+        className="from-background absolute inset-0 bg-gradient-to-b to-transparent"
+        style={{ zIndex: 1 }}
+      />
+
+      {/* Blur layers */}
       {divElements.map((_, index) => {
         // Calculate the blur for this step, distributing from 0 to blur
         const blurIndex = index
