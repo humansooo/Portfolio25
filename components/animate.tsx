@@ -1,9 +1,9 @@
-"use client";
-import { motion, HTMLMotionProps } from "framer-motion";
-import React from "react";
+'use client'
+import { motion, HTMLMotionProps } from 'framer-motion'
+import React from 'react'
 
-interface FadeInWhenVisibleProps extends HTMLMotionProps<"div"> {
-  children: React.ReactNode;
+interface FadeInWhenVisibleProps extends HTMLMotionProps<'div'> {
+  children: React.ReactNode
   // delay?: number;
   // repeat?: boolean;
 }
@@ -24,5 +24,5 @@ export const FadeInWhenVisible = ({
     // @ts-ignore
     <div {...props}>{children}</div>
     // </motion.div>
-  );
-};
+  )
+}

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @source '../*.{js,ts,jsx,tsx,mdx}';
 
@@ -43,6 +43,8 @@
   --font-montserrat: var(--font-montserrat);
   --font-bohme: var(--font-bohme);
   --font-racing-sans-one: var(--font-racing-sans-one);
+  --font-geist-sans: var(--font-geist-sans);
+  --font-poppins: var(--font-poppins);
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -122,25 +124,34 @@
 }
 
 .hazy {
-  text-shadow: 0 0 8px #ff00cc, 0 0 16px #3333ff, 0 0 24px #00ffcc,
+  text-shadow:
+    0 0 8px #ff00cc,
+    0 0 16px #3333ff,
+    0 0 24px #00ffcc,
     0 0 32px #ffcc00;
   filter: blur(10px);
 }
 
 .gloom-strong {
-  text-shadow: 0 0 12px currentColor, 0 0 24px currentColor,
-    0 0 36px currentColor, 0 0 48px currentColor;
+  text-shadow:
+    0 0 12px currentColor,
+    0 0 24px currentColor,
+    0 0 36px currentColor,
+    0 0 48px currentColor;
   filter: blur(0.5px);
   opacity: 0.8;
 }
 
 .hazy-strong {
-  text-shadow: 0 0 12px #ff00cc, 0 0 24px #3333ff, 0 0 36px #00ffcc,
+  text-shadow:
+    0 0 12px #ff00cc,
+    0 0 24px #3333ff,
+    0 0 36px #00ffcc,
     0 0 48px #ffcc00;
   filter: blur(10px);
 }
 
-@utility container {
+/* @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
   @media (width >= --theme(--breakpoint-sm)) {
@@ -149,7 +160,7 @@
   @media (width >= 1400px) {
     max-width: 1400px;
   }
-}
+} */
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -225,14 +236,14 @@
     --chart-5: 340 75% 55%;
   }
   body {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-poppins), sans-serif;
     font-weight: 400;
     line-height: 1.6;
     @apply bg-background;
   }
 
   em {
-    font-family: var(--font-inter), serif;
+    font-family: var(--font-geist-sans), serif;
     font-style: italic;
   }
 }

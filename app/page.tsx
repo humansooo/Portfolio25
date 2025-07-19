@@ -1,18 +1,18 @@
-import AboutSection from "@/components/about-section";
-import ContactSection from "@/components/contact-section";
-import ExperienceSection from "@/components/experience-section";
-import Navbar from "@/components/navbar";
-import ProjectsSection from "@/components/projects-section";
-import SkillsSection from "@/components/skills-section";
-import GrainAnimation from "@/components/grain-animation";
-import { EasterEgg } from "@/components/animations";
+import AboutSection from '@/components/about-section'
+import ContactSection from '@/components/contact-section'
+import ExperienceSection from '@/components/experience-section'
+import Navbar from '@/components/navbar'
+import ProjectsSection from '@/components/projects-section'
+import SkillsSection from '@/components/skills-section'
+import GrainAnimation from '@/components/grain-animation'
+import { EasterEgg } from '@/components/animations'
 
 export default async function Home() {
   return (
-    <div className="relative min-h-screen min-w-screen bg-background overflow-hidden">
+    <div className="bg-background relative min-h-screen min-w-screen overflow-hidden">
       <GrainAnimation />
       <Navbar />
-      <main className="mx-auto space-y-24 pt-[40vh] pb-[20vh] lg:max-w-[640px] z-10 px-8">
+      <main className="z-10 mx-auto space-y-24 px-8 pt-[40vh] pb-[20vh] lg:max-w-[640px]">
         <div id="about">
           <AboutSection />
         </div>
@@ -30,5 +30,5 @@ export default async function Home() {
         </div>
       </main>
     </div>
-  );
+  )
 }

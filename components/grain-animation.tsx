@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 export default function GrainAnimation() {
   return (
@@ -9,11 +9,11 @@ export default function GrainAnimation() {
         style={{
           backgroundImage:
             'url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png")',
-          height: "300%",
-          width: "300%",
+          height: '300%',
+          width: '300%',
           top: 0,
           left: 0,
-          animation: "animate-grain 8s steps(10) infinite",
+          animation: 'animate-grain 8s steps(10) infinite',
         }}
       />
       <style jsx global>{`
@@ -58,5 +58,5 @@ export default function GrainAnimation() {
         }
       `}</style>
     </>
-  );
+  )
 }

@@ -1,26 +1,26 @@
-"use client";
+'use client'
 
-import React from "react";
-import { ProjectImageGallery, ProjectImageGrid } from "./project-image-gallery";
-import { ImagePreviewer, useImagePreviewer } from "./image-previewer";
+import React from 'react'
+import { ProjectImageGallery, ProjectImageGrid } from './project-image-gallery'
+import { ImagePreviewer, useImagePreviewer } from './image-previewer'
 
 // Example of multiple images for a project
 const exampleProject = {
-  title: "Portfolio Website",
+  title: 'Portfolio Website',
   images: [
-    "/portfolio1.svg",
-    "/portfolio2.svg",
-    "/placeholder.svg",
-    "/placeholder.jpg",
-    "/placeholder-logo.svg",
+    '/portfolio1.svg',
+    '/portfolio2.svg',
+    '/placeholder.svg',
+    '/placeholder.jpg',
+    '/placeholder-logo.svg',
   ],
-};
+}
 
 // Example of single image
 const singleImageProject = {
-  title: "Single Image Project",
-  image: "/apestype.svg",
-};
+  title: 'Single Image Project',
+  image: '/apestype.svg',
+}
 
 export function ImagePreviewerExample() {
   const {
@@ -30,14 +30,14 @@ export function ImagePreviewerExample() {
     closePreviewer,
     navigateToImage,
   } = useImagePreviewer([
-    "/portfolio1.svg",
-    "/portfolio2.svg",
-    "/placeholder.svg",
-  ]);
+    '/portfolio1.svg',
+    '/portfolio2.svg',
+    '/placeholder.svg',
+  ])
 
   return (
-    <div className="p-8 space-y-8">
-      <h2 className="text-2xl font-bold mb-4">Image Previewer Examples</h2>
+    <div className="space-y-8 p-8">
+      <h2 className="mb-4 text-2xl font-bold">Image Previewer Examples</h2>
 
       {/* Example 1: Single Image Gallery */}
       <div className="space-y-4">
@@ -81,14 +81,14 @@ export function ImagePreviewerExample() {
         <div className="flex gap-4">
           <button
             onClick={() => openPreviewer(0)}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+            className="rounded bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600"
           >
             Open Image Previewer
           </button>
         </div>
 
         <ImagePreviewer
-          images={["/portfolio1.svg", "/portfolio2.svg", "/placeholder.svg"]}
+          images={['/portfolio1.svg', '/portfolio2.svg', '/placeholder.svg']}
           currentIndex={currentIndex}
           isOpen={isOpen}
           onClose={closePreviewer}
@@ -98,13 +98,13 @@ export function ImagePreviewerExample() {
       </div>
 
       {/* Usage Instructions */}
-      <div className="space-y-4 mt-8 p-4 bg-gray-100 rounded">
+      <div className="mt-8 space-y-4 rounded bg-gray-100 p-4">
         <h3 className="text-lg font-semibold">Usage Instructions</h3>
         <div className="space-y-2 text-sm">
           <p>
             <strong>Keyboard Shortcuts:</strong>
           </p>
-          <ul className="list-disc list-inside space-y-1 ml-4">
+          <ul className="ml-4 list-inside list-disc space-y-1">
             <li>
               <code>ESC</code> - Close previewer
             </li>
@@ -122,7 +122,7 @@ export function ImagePreviewerExample() {
           <p className="mt-4">
             <strong>Mouse/Touch Interactions:</strong>
           </p>
-          <ul className="list-disc list-inside space-y-1 ml-4">
+          <ul className="ml-4 list-inside list-disc space-y-1">
             <li>Click/tap image to zoom in (desktop only)</li>
             <li>Drag/pan when zoomed in</li>
             <li>Double tap to zoom (mobile)</li>
@@ -134,5 +134,5 @@ export function ImagePreviewerExample() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,18 +1,18 @@
-"use client";
+'use client'
 
 export default function ExpLinkTitle({
   title,
   link,
 }: {
-  title: string;
-  link?: string;
+  title: string
+  link?: string
 }) {
   return (
     <button
-      onClick={() => link && window.open(link, "_blank")}
-      className="flex items-center gap-2 font-semibold font-racing-sans-one"
+      onClick={() => link && window.open(link, '_blank')}
+      className="font-racing-sans-one flex items-center gap-2 font-semibold"
     >
       {title}
     </button>
-  );
+  )
 }
