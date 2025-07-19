@@ -1,7 +1,7 @@
 export const EasterEgg = (props: { rotate?: number }) => {
   return (
     <div
-      className="font-bytesized text-foreground pointer-events-none absolute z-0 text-[100px] opacity-[0.5] dark:opacity-[0.1]"
+      className="font-bytesized text-foreground pointer-events-none absolute z-0 text-[100px] opacity-[0] dark:opacity-[0.2]"
       style={{
         top: '50%',
         left: '50%',
