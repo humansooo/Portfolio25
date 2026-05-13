@@ -1,11 +1,17 @@
 'use client'
 
+import { motion } from 'motion/react'
+
 export default function GrainAnimation() {
   return (
-    <>
-      <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: [0, 0, 1] }}
+      transition={{ duration: 2 }}
+    >
+      <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-999999999 opacity-[0.07] dark:opacity-[0.05] dark:bg-blend-multiply"
+        className="grain-animate pointer-events-none fixed inset-0 z-999999999 opacity-[0.07] transition-all duration-500 dark:opacity-[0.05] dark:bg-blend-multiply"
         style={{
           backgroundImage:
             'url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png")',
@@ -13,7 +19,7 @@ export default function GrainAnimation() {
           width: '300%',
           top: 0,
           left: 0,
-          animation: 'animate-grain 8s steps(10) infinite',
+          // animation: 'animate-grain 8s steps(10) infinite',
         }}
       />
       <style jsx global>{`
@@ -57,6 +63,6 @@ export default function GrainAnimation() {
           animation: animate-grain 8s steps(10) infinite;
         }
       `}</style>
-    </>
+    </motion.div>
   )
 }
