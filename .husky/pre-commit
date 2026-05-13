@@ -1,0 +1,8 @@
+. "$(dirname "$0")/common.sh"
+
+husky_banner "Pre-commit"
+
+husky_step "Prettier (check)" bun run format:check
+husky_step "TypeScript" bun run typecheck
+
+husky_footer_ok "Pre-commit"

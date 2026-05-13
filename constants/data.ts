@@ -10,33 +10,33 @@ export const experiences = [
   {
     year: 'JUN 2025 - PRESENT',
     title: 'Software Engineer',
-    company: 'Faebikes - Ev rentals',
+    company: 'Faebikes - EV Rentals',
     description:
-      'Developing and maintaining React native and Next.js applications. <br /> <ul> <li>Enhancing performance and user experience</li> </ul>',
+      'Developing and maintaining React Native and Next.js applications. <br /> <ul> <li>Enhancing performance and user experience</li> </ul>',
     link: 'https://play.google.com/store/apps/details?id=com.faebikes.faeapp&hl=en_IN/',
   },
   {
-    year: 'DEC 2024 - MAY 2025',
+    year: 'DEC 2024 - MAR 2025',
     title: 'Full Stack Developer',
     company: 'Placeaa',
     description:
-      'Developed and maintained web applications using Next.js, NestJS, and TypeScript. <ul> <li>Refactored and optimized the codebase for better performance and maintainability</li> </ul>',
+      'Developed and maintained an admin dashboard for an AI-powered Travel Companion and revised the company website using Next.js, Node.js, and TypeScript. <ul> <li>Improved frontend performance and UX, aligning the design with modern standards</li> <li>Collaborated with the backend team to ensure robust API integration and deployment workflows</li> <li>Delivered scalable and maintainable solutions as part of a fast-moving development team</li> </ul>',
     link: 'https://placeaa.com/',
   },
   {
-    year: ' DEC 2023 - DEC 2024',
+    year: 'SEP 2023 - DEC 2024',
     title: 'Full Stack Developer',
-    company: 'Ignition Nest Lab',
+    company: 'Ignition Nest Labs',
     description:
-      'Developed and maintained web applications using Next.js, React Native, NestJS, and TypeScript. <br /> <ul> <li>Developed <b>Apgyc - Campus Delivery App</b></li> <li>Developed <b>Parul Sevashram Hospital - Ecoach Platform</b> for training staff, conducting exams, and managing Learning Resources <ul><li>Used NestJS for backend and Prisma for database</li> <li>Used Next.js for frontend and Tailwind for styling</li> <li>Used Socket.io for real-time communication</li> <li>Used aws for hosting</li> </ul> </li> <li>Build <b>Growthkar</b> and various other projects</li> </ul>',
+      'Developed and maintained full-stack solutions across various platforms including chat apps, delivery services, and training portals. <ul> <li>Utilized React Native and Next.js for frontend, and NestJS, Prisma ORM, PostgreSQL, and WebSocket for backend</li> <li>Delivered scalable, secure, and performant applications with real-time features</li> <li>Built <b>Apgyc - Campus Delivery</b>, <b>Parul Sevashram Hospital - Ecoach</b>, <b>Growthkar</b>, and various other projects</li> </ul>',
     link: 'https://ignition-nest-labs.vercel.app/',
   },
   {
-    year: '2023',
-    title: 'React Native Developer',
-    company: 'Medref - healthcare App',
+    year: 'MAY 2023 - DEC 2023',
+    title: 'Mobile Developer',
+    company: 'MedRef - Healthcare App',
     description:
-      'Build a healthcare app using React Native. <br /> <ul> <li>Integrating features like appointment scheduling, patient management, and telemedicine functionalities</li> <li>Used React Native for frontend and Firebase for backend</li> </ul>',
+      'Led the design and development of a healthcare mobile app using React Native. <ul> <li>Implemented features like appointment scheduling, patient records, and telehealth</li> <li>Focused on intuitive UI and efficient API integration for seamless user experience</li> </ul>',
   },
 ]
 
@@ -103,5 +103,36 @@ export const projects = [
     skills: ['Open Source', 'React Native', 'TypeScript', 'Redux'],
     image: '/placeholder.svg',
     link: 'https://github.com/alternativehimanshu/expo-toastee',
+  },
+]
+
+export const skills = {
+  frontend: [
+    'ReactJS',
+    'Next.js',
+    'React Native (Expo)',
+    'Redux',
+    'Tailwind CSS',
+  ],
+  backend: ['NestJS', 'Node.js', 'Bun.js', 'Linux', 'WebSocket', 'Prisma'],
+  databaseAndCloud: ['PostgreSQL', 'MongoDB', 'AWS', 'Vercel', 'Firebase'],
+  languages: ['TypeScript', 'JavaScript', 'Java'],
+  tools: ['Git', 'GitHub Actions', 'Docker', 'Figma'],
+}
+
+export const education = [
+  {
+    year: '2021 - 2025',
+    degree: 'B.Tech - Computer Science & Engineering',
+    institution: 'Parul University',
+    location: 'Vadodara, India',
+  },
+]
+
+export const extras = [
+  {
+    role: 'Web Developer',
+    organization: 'Google Developer Student Club (GDSC)',
+    institution: 'Parul University',
   },
 ]

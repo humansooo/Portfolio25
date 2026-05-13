@@ -1,0 +1,8 @@
+. "$(dirname "$0")/common.sh"
+
+husky_banner "Pre-push"
+
+husky_step "TypeScript" bun run typecheck
+husky_step "Production build" bun run build
+
+husky_footer_ok "Pre-push"
