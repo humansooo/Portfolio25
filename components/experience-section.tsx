@@ -32,11 +32,13 @@ export default function ExperienceSection() {
               </div>
             </div>
           ))}
-          <EasterEgg rotate={40} style={{
-            transform: 'translate(0%, 0%)',
-            opacity: 0.2
-          }} />
-
+          <EasterEgg
+            rotate={40}
+            style={{
+              transform: 'translate(0%, 0%)',
+              opacity: 0.2,
+            }}
+          />
         </div>
       </FadeInWhenVisible>
     </section>

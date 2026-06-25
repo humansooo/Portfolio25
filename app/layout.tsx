@@ -6,7 +6,7 @@ import {
   Racing_Sans_One,
   Geist,
   Space_Grotesk,
-  Raleway
+  Raleway,
 } from 'next/font/google'
 import localFont from 'next/font/local'
 import { ThemeProvider } from '@/lib/theme-provider'

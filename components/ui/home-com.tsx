@@ -6,7 +6,8 @@ export default function HomeCom() {
   return (
     <div className="mt-10 flex flex-row items-center gap-4">
       <GlassButton
-        size="lg" className='cursor-pointer'
+        size="lg"
+        className="cursor-pointer"
         onClick={() => window.open('mailto:himanshuforpro@gmail.com')}
       >
         Mail me

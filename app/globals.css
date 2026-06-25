@@ -149,7 +149,6 @@ html {
   scroll-padding-top: 5rem; /* Accounts for fixed navbar height */
 }
 
-
 .gloom {
   text-shadow: 0 0 50px color-mix(in srgb, currentColor 50%, transparent);
   filter: blur(0.3px);
@@ -159,7 +158,6 @@ html {
 @keyframes sodo-half-init {
   from {
     filter: blur(2px);
-
   }
   to {
     filter: blur(1px);

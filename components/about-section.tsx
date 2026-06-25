@@ -9,12 +9,12 @@ export default function AboutSection() {
       <EasterEgg />
       <FadeInWhenVisible className="z-10 w-full text-left">
         <div className="space-y-6">
-          <h1 className="text-foreground text-xl  md:text-xl lg:text-2xl">
+          <h1 className="text-foreground text-xl md:text-xl lg:text-2xl">
             Hey, I'm {user.name},
             <br />
             full-stack & mobile developer — 3+ years shipping
             <br />
-            <span className="font-racing-sans-one sodo-half text-3xl ">
+            <span className="font-racing-sans-one sodo-half text-3xl">
               React Native, NestJS & TypeScript
             </span>{' '}
             daily.

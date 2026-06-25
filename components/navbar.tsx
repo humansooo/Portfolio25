@@ -169,7 +169,7 @@ export default function Navbar() {
                       // boxShadow: " 5px 5px 5px #6666",
                     }
                   }
-                  className="sodo dark:bg-black/50 cursor-pointer rounded-xl p-2 shadow-[inset_4px_4px_4px_#60606030] transition-all duration-500 hover:bg-[#4441] hover:shadow-[inset_7px_7px_7px_#6669]"
+                  className="sodo cursor-pointer rounded-xl p-2 shadow-[inset_4px_4px_4px_#60606030] transition-all duration-500 hover:bg-[#4441] hover:shadow-[inset_7px_7px_7px_#6669] dark:bg-black/50"
                 >
                   {item.icon}
                 </Link>

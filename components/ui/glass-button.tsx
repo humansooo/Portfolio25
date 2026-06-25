@@ -22,7 +22,7 @@ export function GlassButton({
   return (
     <button
       className={cn(
-        ' sodo text-foreground bg-background/30 font-mono font-bold rounded-xl shadow-[inset_5px_5px_5px_#6666] transition-all duration-700 hover:shadow-[inset_7px_7px_7px_#6676]',
+        'sodo text-foreground bg-background/30 rounded-xl font-mono font-bold shadow-[inset_5px_5px_5px_#6666] transition-all duration-700 hover:shadow-[inset_7px_7px_7px_#6676]',
         sizeVariants[size],
         className,
       )}

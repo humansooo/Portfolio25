@@ -112,23 +112,11 @@ export const projects = [
 ]
 
 export const skills = {
-  frontend: [
-    'React.js',
-    'Next.js',
-    'React Native (Expo)',
-    'Zustand',
-    'Redux',
-  ],
+  frontend: ['React.js', 'Next.js', 'React Native (Expo)', 'Zustand', 'Redux'],
   backend: ['NestJS', 'FastAPI', 'Bun.js', 'WebSocket', 'REST APIs'],
   databaseAndCloud: ['PostgreSQL', 'Prisma ORM', 'AWS', 'Vercel'],
   languages: ['TypeScript', 'JavaScript', 'Python'],
-  devops: [
-    'Git',
-    'GitHub Actions',
-    'Docker',
-    'CI/CD Pipelines',
-    'Linux',
-  ],
+  devops: ['Git', 'GitHub Actions', 'Docker', 'CI/CD Pipelines', 'Linux'],
 }
 
 export const education = [
