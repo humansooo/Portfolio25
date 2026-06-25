@@ -2,7 +2,9 @@
 
 husky_banner "Pre-commit"
 
-husky_step "Prettier (check)" bun run format:check
+if ! bun run format:check; then
+  husky_step "Prettier (write)" bun run format
+fi
 husky_step "TypeScript" bun run typecheck
 
 husky_footer_ok "Pre-commit"

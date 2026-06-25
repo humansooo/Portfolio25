@@ -3,11 +3,11 @@
 import type React from 'react'
 
 import { useState } from 'react'
-import { user } from '@/constants/data'
+import { summary, user } from '@/constants/data'
 import Link from 'next/link'
 import { toast } from 'sonner'
 import { FadeInWhenVisible } from './animate'
-import { LucidePhone, Mail, PhoneCall } from 'lucide-react'
+import { Github, Linkedin, Mail, PhoneCall } from 'lucide-react'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -39,8 +39,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <div className="w-full">
             <p className="text-foreground mb-8 text-sm leading-relaxed">
-              I'm currently open to new opportunities and collaborations. Feel
-              free to reach out if you'd like to work together.
+              {summary.split('.')[0]}.
             </p>
             <div className="flex flex-col gap-2">
               <p className="text-foreground text-sm">
@@ -62,7 +61,31 @@ export default function ContactSection() {
                   <span className="mr-2">
                     <PhoneCall fill="currentColor" size={12} />
                   </span>
-                  call
+                  {user.phone}
+                </Link>
+              </p>
+              <p className="text-foreground text-sm">
+                <Link
+                  href={user.github}
+                  target="_blank"
+                  className="flex items-center gap-2"
+                >
+                  <span className="mr-2">
+                    <Github size={12} />
+                  </span>
+                  GitHub
+                </Link>
+              </p>
+              <p className="text-foreground text-sm">
+                <Link
+                  href={user.linkedin}
+                  target="_blank"
+                  className="flex items-center gap-2"
+                >
+                  <span className="mr-2">
+                    <Linkedin size={12} />
+                  </span>
+                  LinkedIn
                 </Link>
               </p>
             </div>

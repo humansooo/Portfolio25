@@ -1,5 +1,6 @@
 import AboutSection from '@/components/about-section'
 import ContactSection from '@/components/contact-section'
+import EducationSection from '@/components/education-section'
 import ExperienceSection from '@/components/experience-section'
 import Navbar from '@/components/navbar'
 import ProjectsSection from '@/components/projects-section'
@@ -25,6 +26,9 @@ export default async function Home() {
         </div>
         <div id="skills">
           <SkillsSection />
+        </div>
+        <div id="education">
+          <EducationSection />
         </div>
         <div id="contact">
           <ContactSection />

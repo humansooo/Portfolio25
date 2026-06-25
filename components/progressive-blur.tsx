@@ -20,7 +20,7 @@ export default function ProgressiveBlur({
     >
       {/* Background gradient layer */}
       <div
-        className="from-background absolute inset-0 bg-gradient-to-b to-transparent"
+        className="from-background absolute inset-0 bg-linear-to-b to-transparent"
         style={{ zIndex: 1 }}
       />
 

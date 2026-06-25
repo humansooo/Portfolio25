@@ -2,7 +2,6 @@ import { projects } from '@/constants/data'
 import { Link2 } from 'lucide-react'
 import { FadeInWhenVisible } from './animate'
 import Link from 'next/link'
-import { ProjectImageGallery } from './project-image-gallery'
 
 export default function ProjectsSection() {
   return (
@@ -17,11 +16,6 @@ export default function ProjectsSection() {
               key={index}
               className="border-border relative flex flex-col gap-3 border border-dashed p-2 pb-4"
             >
-              <ProjectImageGallery
-                images={project.image}
-                projectTitle={project.title}
-                aspectRatio="aspect-8/5"
-              />
               <div className="">
                 <h3 className="font-geist-mono text-foreground/80 flex items-center justify-between text-sm font-bold">
                   {project.title}
@@ -36,6 +30,11 @@ export default function ProjectsSection() {
                     </Link>
                   )}
                 </h3>
+                {'description' in project && project.description && (
+                  <p className="text-foreground/70 mt-2 text-xs leading-relaxed">
+                    {project.description}
+                  </p>
+                )}
                 <p className="text-foreground mt-3 flex flex-wrap gap-2 text-sm font-bold">
                   {project.skills.map((skill, index) => (
                     <span

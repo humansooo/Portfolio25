@@ -24,7 +24,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'projects', 'experience', 'skills', 'contact']
+      const sections = [
+        'about',
+        'projects',
+        'experience',
+        'skills',
+        'education',
+        'contact',
+      ]
       const currentSection = sections.find((section) => {
         const element = document.getElementById(section)
         if (element) {
@@ -145,7 +152,7 @@ export default function Navbar() {
         >
           <Link
             href="/"
-            className="font-bytesized text-foreground sodo text-xl"
+            className="font-bytesized text-foreground sodo cursor-pointer text-xl"
           >
             Himanshu
           </Link>
@@ -162,7 +169,7 @@ export default function Navbar() {
                       // boxShadow: " 5px 5px 5px #6666",
                     }
                   }
-                  className="sodo rounded-xl p-2 shadow-[inset_4px_4px_4px_#60606030] transition-all duration-500 hover:bg-[#4441] hover:px-3.5 hover:shadow-[inset_7px_7px_7px_#6664]"
+                  className="sodo dark:bg-black/50 cursor-pointer rounded-xl p-2 shadow-[inset_4px_4px_4px_#60606030] transition-all duration-500 hover:bg-[#4441] hover:shadow-[inset_7px_7px_7px_#6669]"
                 >
                   {item.icon}
                 </Link>

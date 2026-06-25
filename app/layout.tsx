@@ -3,11 +3,10 @@ import '@/app/globals.css'
 import type { Metadata } from 'next'
 import {
   Inter,
-  Geist_Mono,
-  Montserrat,
   Racing_Sans_One,
   Geist,
-  Poppins,
+  Space_Grotesk,
+  Raleway
 } from 'next/font/google'
 import localFont from 'next/font/local'
 import { ThemeProvider } from '@/lib/theme-provider'
@@ -17,17 +16,12 @@ import { ThemeToggle } from '@/components/theme-toggle'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '600', '700', '200', '300'],
 })
 
 const bytesized = localFont({
   src: '../public/font/bytesized-latin-400-normal.woff2',
   variable: '--font-bytesized',
-})
-
-const bohme = localFont({
-  src: '../public/font/bohme/Bohme.ttf',
-  variable: '--font-bohme',
 })
 
 const racingSansOne = Racing_Sans_One({
@@ -36,50 +30,41 @@ const racingSansOne = Racing_Sans_One({
   weight: ['400'],
 })
 
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
-  weight: ['400', '500', '600', '700', '200', '300'],
-})
-
 const geistSans = Geist({
   subsets: ['latin'],
   variable: '--font-geist-sans',
   weight: ['400', '500', '600', '700', '200', '300'],
 })
 
-const poppins = Poppins({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-poppins',
-  weight: ['400', '500', '600', '700', '200', '300'],
+  variable: '--font-space-grotesk',
+  weight: ['300', '400', '500', '600', '700'],
 })
 
-const montserrat = Montserrat({
+const raleway = Raleway({
   subsets: ['latin'],
-  variable: '--font-montserrat',
-  weight: ['400', '500', '600', '700', '200', '300'],
+  variable: '--font-raleway',
+  weight: ['400', '500', '600', '700', '800', '900'],
 })
 
 export const metadata: Metadata = {
-  title: 'Himanshu Suthar | Portfolio',
-  applicationName: 'Himanshu Suthar | Portfolio',
+  title: 'Himanshu Suthar | Full Stack Developer',
+  applicationName: 'Himanshu Suthar | Full Stack Developer',
   description:
-    'A full-stack developer specialized in React Native and Web Development. I help brands connect with people with a fresh and distinctive approach.',
+    'Full Stack and Mobile Developer with 3+ years building scalable web and mobile applications across healthtech, mobility, and SaaS. React, React Native, NestJS, TypeScript.',
   keywords: [
     'Himanshu Suthar',
-    'Portfolio',
     'Full Stack Developer',
+    'Mobile Developer',
     'React Native',
-    'Web Development',
-    'Software Engineer',
-    'Next.js',
+    'NestJS',
     'TypeScript',
-    'JavaScript',
-    'Frontend Developer',
-    'Backend Developer',
-    'UI/UX Designer',
-    'Mobile App Development',
-    'Web App Development',
+    'FastAPI',
+    'Next.js',
+    'CI/CD',
+    'Healthtech',
+    'SaaS',
   ],
   icons: {
     icon: '/icon.svg',
@@ -109,11 +94,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Himanshu Suthar | Portfolio',
+    title: 'Himanshu Suthar | Full Stack Developer',
     description:
-      'A full-stack developer specialized in React Native and Web Development. I help brands connect with people with a fresh and distinctive approach.',
+      'Full Stack and Mobile Developer with 3+ years building scalable web and mobile applications across healthtech, mobility, and SaaS.',
     url: 'https://himanshu.com',
-    siteName: 'Himanshu Suthar | Portfolio',
+    siteName: 'Himanshu Suthar | Full Stack Developer',
   },
 }
 
@@ -128,7 +113,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="32x32" />
       </head>
       <body
-        className={`${inter.variable} ${bytesized.variable} ${geistMono.variable} ${montserrat.variable} ${bohme.variable} ${racingSansOne.variable} ${geistSans.variable} ${poppins.variable} overflow-x-hidden antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${bytesized.variable} ${racingSansOne.variable} ${geistSans.variable} ${raleway.variable} overflow-x-hidden antialiased`}
       >
         <ThemeProvider
           attribute="class"

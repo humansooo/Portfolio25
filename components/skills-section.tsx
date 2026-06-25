@@ -1,23 +1,17 @@
+import { skills as skillGroups } from '@/constants/data'
 import { FadeInWhenVisible } from './animate'
 import { EasterEgg } from './animations'
 import { GlassButton } from './ui/glass-button'
 
-export default function SkillsSection() {
-  const skills = [
-    'JavaScript',
-    'TypeScript',
-    'React',
-    'React Native',
-    'Next.js',
-    'Node.js',
-    'Express',
-    'MongoDB',
-    'PostgreSQL',
-    'Git',
-    'Figma',
-    'Tailwind CSS',
-  ]
+const skills = [
+  ...skillGroups.frontend,
+  ...skillGroups.backend,
+  ...skillGroups.databaseAndCloud,
+  ...skillGroups.languages,
+  ...skillGroups.devops,
+]
 
+export default function SkillsSection() {
   return (
     <section className="relative">
       <EasterEgg rotate={260} />

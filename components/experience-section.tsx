@@ -3,10 +3,11 @@ import { Dot } from 'lucide-react'
 import { FadeInWhenVisible } from './animate'
 import ExpLinkTitle from './ui/exp-link-title'
 import { HtmlRenderer } from './ui/html-renderer'
+import { EasterEgg } from './animations'
 
 export default function ExperienceSection() {
   return (
-    <section className="">
+    <section className="relative">
       <FadeInWhenVisible className="w-full">
         <h2 className="font-bytesized text-foreground gloom mb-16 text-2xl font-light">
           Experience
@@ -31,6 +32,11 @@ export default function ExperienceSection() {
               </div>
             </div>
           ))}
+          <EasterEgg rotate={40} style={{
+            transform: 'translate(0%, 0%)',
+            opacity: 0.2
+          }} />
+
         </div>
       </FadeInWhenVisible>
     </section>

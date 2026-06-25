@@ -1,13 +1,13 @@
-export const EasterEgg = (props: { rotate?: number }) => {
+export const EasterEgg = (props: { rotate?: number; style?: React.CSSProperties }) => {
   return (
     <div
-      className="font-bytesized text-foreground pointer-events-none absolute z-0 text-[100px] opacity-[0] dark:opacity-[0.2]"
+      className="font-bytesized text-foreground pointer-events-none absolute z-0 text-[100px] opacity-0 dark:opacity-10 blur-md"
       style={{
         top: '50%',
         left: '50%',
-        filter: 'blur(14px)',
         rotate: `${props.rotate ? props.rotate : 0}deg`,
         scale: 10,
+        ...(props.style || {}),
       }}
     >
       (*)
