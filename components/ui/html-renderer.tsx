@@ -2,7 +2,24 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { cn } from '@/lib/utils'
-import { GlassButton } from './glass-button'
+
+function ToggleButton({
+  expanded,
+  onClick,
+}: {
+  expanded: boolean
+  onClick: () => void
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="link-quiet font-geist-mono text-muted-foreground hover:text-foreground mt-3 cursor-pointer text-[11px] tracking-widest uppercase transition-colors duration-300"
+    >
+      {expanded ? 'Show less' : 'Show more'}
+    </button>
+  )
+}
 
 interface HtmlRendererProps {
   content: string
@@ -29,19 +46,19 @@ export function HtmlRenderer({ content, className }: HtmlRendererProps) {
     // Process HTML content with proper styling
     const processedHtml = content
       .replace(/<br\s*\/?>/g, '<br />')
-      .replace(/<ul>/g, "<ul class='list-disc mt-2 pl-6'>")
+      .replace(/<ul>/g, "<ul class='mt-2 space-y-1.5'>")
       .replace(/<\/ul>/g, '</ul>')
-      .replace(/<li>/g, "<li class='mb-1 text-sm'>")
+      .replace(
+        /<li>/g,
+        "<li class='relative pl-5 text-sm before:absolute before:left-0 before:content-[\"—\"] before:opacity-40'>",
+      )
       .replace(/<\/li>/g, '</li>')
       .replace(/<b>/g, "<b class='font-bold'>")
       .replace(/<\/b>/g, '</b>')
 
     return (
       <div
-        className={cn(
-          'prose prose-invert prose-ul:list-disc prose-ul:pl-4',
-          className,
-        )}
+        className={cn(className)}
       >
         <div className="relative">
           <div
@@ -62,14 +79,10 @@ export function HtmlRenderer({ content, className }: HtmlRendererProps) {
           />
         </div>
         {shouldShowToggle && (
-          <GlassButton
-            size="xs"
-            className="bg-background/60 mt-2 backdrop-blur"
-            type="button"
+          <ToggleButton
+            expanded={expanded}
             onClick={() => setExpanded((v) => !v)}
-          >
-            {expanded ? 'Show less' : 'Show more'}
-          </GlassButton>
+          />
         )}
       </div>
     )
@@ -99,14 +112,10 @@ export function HtmlRenderer({ content, className }: HtmlRendererProps) {
         />
       </div>
       {shouldShowToggle && (
-        <GlassButton
-          size="xs"
-          className="bg-background/60 mt-2 backdrop-blur"
-          type="button"
+        <ToggleButton
+          expanded={expanded}
           onClick={() => setExpanded((v) => !v)}
-        >
-          {expanded ? 'Show less' : 'Show more'}
-        </GlassButton>
+        />
       )}
     </div>
   )

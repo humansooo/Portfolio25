@@ -1,54 +1,70 @@
 import { projects } from '@/constants/data'
-import { Link2 } from 'lucide-react'
-import { FadeInWhenVisible } from './animate'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
+import SectionHeading from './section-heading'
+
+function ProjectRow({
+  project,
+  index,
+}: {
+  project: (typeof projects)[number]
+  index: number
+}) {
+  const inner = (
+    <>
+      <span className="font-geist-mono text-muted-foreground/70 w-8 shrink-0 pt-1 text-xs">
+        {String(index + 1).padStart(2, '0')}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="flex items-baseline justify-between gap-3">
+          <span className="text-foreground text-[15px] font-medium tracking-tight">
+            {project.title}
+          </span>
+          {'link' in project && project.link && (
+            <ArrowUpRight
+              size={15}
+              className="text-muted-foreground group-hover:text-foreground shrink-0 translate-y-0.5 opacity-60 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
+            />
+          )}
+        </span>
+        {'description' in project && project.description && (
+          <span className="text-muted-foreground mt-1.5 block text-[13px] leading-relaxed">
+            {project.description}
+          </span>
+        )}
+        <span className="font-geist-mono text-muted-foreground/80 mt-2.5 block text-[11px] tracking-wide">
+          {project.skills.join(' · ')}
+        </span>
+      </span>
+    </>
+  )
+
+  const rowClass =
+    'group border-border flex gap-3 border-b py-6 transition-colors duration-300 first:pt-0'
+
+  if ('link' in project && project.link) {
+    return (
+      <Link
+        href={project.link}
+        target="_blank"
+        className={`${rowClass} hover:border-foreground/40`}
+      >
+        {inner}
+      </Link>
+    )
+  }
+
+  return <div className={rowClass}>{inner}</div>
+}
 
 export default function ProjectsSection() {
   return (
-    <section className="">
-      <div className="w-full">
-        <h2 className="font-bytesized text-foreground gloom mb-16 text-2xl font-light">
-          Projects
-        </h2>
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-2 lg:grid-cols-2">
-          {projects.map((project, index) => (
-            <FadeInWhenVisible
-              key={index}
-              className="border-border relative flex flex-col gap-3 border border-dashed p-2 pb-4"
-            >
-              <div className="">
-                <h3 className="font-geist-mono text-foreground/80 flex items-center justify-between text-sm font-bold">
-                  {project.title}
-
-                  {project.link && (
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      className="text-foreground/30 hover:bg-foreground/10 inline-block cursor-pointer rounded-md px-1 transition-all duration-500"
-                    >
-                      <Link2 size={18} />
-                    </Link>
-                  )}
-                </h3>
-                {'description' in project && project.description && (
-                  <p className="text-foreground/70 mt-2 text-xs leading-relaxed">
-                    {project.description}
-                  </p>
-                )}
-                <p className="text-foreground mt-3 flex flex-wrap gap-2 text-sm font-bold">
-                  {project.skills.map((skill, index) => (
-                    <span
-                      key={index}
-                      className="bg-muted/80 text-foreground/60 font-geist-mono rounded-md px-1.5 py-0.5 text-[10px] shadow-[inset_2px_2px_2px_#6664] transition-all duration-500 hover:shadow-[inset_4px_4px_4px_#6664]"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </p>
-              </div>
-            </FadeInWhenVisible>
-          ))}
-        </div>
+    <section>
+      <SectionHeading index="02" title="Selected Projects" />
+      <div>
+        {projects.map((project, index) => (
+          <ProjectRow key={index} project={project} index={index} />
+        ))}
       </div>
     </section>
   )

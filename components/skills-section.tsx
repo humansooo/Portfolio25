@@ -1,30 +1,33 @@
-import { skills as skillGroups } from '@/constants/data'
-import { FadeInWhenVisible } from './animate'
-import { EasterEgg } from './animations'
-import { GlassButton } from './ui/glass-button'
+import { skills } from '@/constants/data'
+import SectionHeading from './section-heading'
 
-const skills = [
-  ...skillGroups.frontend,
-  ...skillGroups.backend,
-  ...skillGroups.databaseAndCloud,
-  ...skillGroups.languages,
-  ...skillGroups.devops,
+const groups: { label: string; items: string[] }[] = [
+  { label: 'Frontend', items: skills.frontend },
+  { label: 'Backend', items: skills.backend },
+  { label: 'Data & Cloud', items: skills.databaseAndCloud },
+  { label: 'Languages', items: skills.languages },
+  { label: 'DevOps', items: skills.devops },
 ]
 
 export default function SkillsSection() {
   return (
-    <section className="relative">
-      <EasterEgg rotate={260} />
-      <FadeInWhenVisible className="w-full">
-        <h2 className="font-bytesized text-foreground gloom mb-16 text-2xl font-light">
-          Skills
-        </h2>
-        <div className="flex flex-wrap items-center gap-4">
-          {skills.map((skill, index) => (
-            <GlassButton key={index}>{skill}</GlassButton>
-          ))}
-        </div>
-      </FadeInWhenVisible>
+    <section>
+      <SectionHeading index="03" title="Skills" />
+      <dl className="space-y-5">
+        {groups.map((group) => (
+          <div
+            key={group.label}
+            className="grid grid-cols-1 gap-1 md:grid-cols-[140px_1fr] md:gap-6"
+          >
+            <dt className="font-geist-mono text-muted-foreground/70 pt-0.5 text-[11px] tracking-widest uppercase">
+              {group.label}
+            </dt>
+            <dd className="text-foreground/90 text-sm leading-relaxed">
+              {group.items.join(', ')}
+            </dd>
+          </div>
+        ))}
+      </dl>
     </section>
   )
 }

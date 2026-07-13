@@ -3,180 +3,119 @@
 import type React from 'react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { Briefcase, Mail, User, Github, XIcon } from 'lucide-react'
 import { user } from '@/constants/data'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { name: 'About', href: '#about', icon: <User size={16} /> },
-  { name: 'Work', href: '#experience', icon: <Briefcase size={16} /> },
-  { name: 'Contact', href: '#contact', icon: <Mail size={16} /> },
-  { name: 'github', href: user.github, icon: <Github size={16} /> },
+  { name: 'Work', href: '#experience' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Contact', href: '#contact' },
+  { name: 'GitHub', href: user.github, external: true },
 ]
 
 export default function Navbar() {
   const isMobile = useIsMobile()
-  const [activeSection, setActiveSection] = useState('about')
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = [
-        'about',
-        'projects',
-        'experience',
-        'skills',
-        'education',
-        'contact',
-      ]
-      const currentSection = sections.find((section) => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 120 && rect.bottom >= 120
-        }
-        return false
-      })
-
-      if (currentSection) {
-        setActiveSection(currentSection)
-      }
-
-      // Handle navbar visibility based on scroll direction
       const currentScrollY = window.scrollY
-
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down - hide navbar with lower threshold
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
         setIsVisible(false)
       } else {
-        // Scrolling up - show navbar
         setIsVisible(true)
       }
-
       setLastScrollY(currentScrollY)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [lastScrollY])
 
-  const handleMobileMenuToggle = () => {
-    setIsMobileOpen(!isMobileOpen)
-  }
-
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {
+    if (!href.startsWith('#')) return
     e.preventDefault()
-    const targetId = href.substring(1)
-    const targetElement = document.getElementById(targetId)
-
-    if (targetElement) {
-      // Use native smooth scroll with proper offset
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
-    }
+    const targetElement = document.getElementById(href.substring(1))
+    targetElement?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
-  const MobileMenuBtn = () => {
-    return (
-      <div>
-        <button
-          onClick={handleMobileMenuToggle}
-          className="text-foreground hover:text-foreground absolute top-1/2 right-4 flex -translate-y-1/2 items-center justify-center text-sm font-medium transition-colors"
-        >
-          <XIcon
-            size={18}
-            strokeWidth={2}
-            className={cn(
-              'text-foreground transition-all duration-300',
-              !isMobileOpen && 'rotate-45',
-            )}
-          />
-        </button>
-      </div>
-    )
-  }
-
-  const MobileMenu = () => {
-    return (
+  return (
+    <>
+      {/* Mobile menu overlay */}
       <div
         className={cn(
-          'bg-background/50 fixed inset-0 z-50 h-screen w-full backdrop-blur-sm transition-all duration-[1000]',
+          'bg-background/80 fixed inset-0 z-40 backdrop-blur-lg transition-all duration-500',
           isMobileOpen
-            ? 'translate-y-0 opacity-100'
-            : '-translate-y-full opacity-0',
+            ? 'pointer-events-auto opacity-100'
+            : 'pointer-events-none opacity-0',
         )}
       >
-        <nav className="flex h-full flex-col items-center justify-center space-y-4 p-4">
-          {navItems.map((item) => (
+        <nav className="flex h-full flex-col items-start justify-center gap-6 px-10">
+          {navItems.map((item, i) => (
             <Link
               key={item.name}
               href={item.href}
+              target={item.external ? '_blank' : undefined}
               onClick={(e) => {
                 handleSmoothScroll(e, item.href)
-                handleMobileMenuToggle()
+                setIsMobileOpen(false)
               }}
-              className="font-bytesized text-foreground hover:text-foreground flex items-center text-4xl transition-colors"
+              className={cn(
+                'display text-foreground text-4xl transition-all duration-500',
+                isMobileOpen
+                  ? 'translate-y-0 opacity-100'
+                  : 'translate-y-4 opacity-0',
+              )}
+              style={{ transitionDelay: isMobileOpen ? `${i * 60}ms` : '0ms' }}
             >
               {item.name}
             </Link>
           ))}
         </nav>
       </div>
-    )
-  }
 
-  return (
-    <>
-      <MobileMenu />
       <header
         className={cn(
-          'fixed top-0 z-50 w-full transition-transform duration-300',
-          isVisible ? 'translate-y-0' : '-translate-y-full',
+          'fixed top-0 z-50 w-full transition-transform duration-500',
+          isVisible || isMobileOpen ? 'translate-y-0' : '-translate-y-full',
         )}
       >
-        <div
-          className={cn(
-            'relative mx-auto flex h-20 items-center justify-between px-8 max-md:justify-center lg:max-w-[640px]',
-            isMobile ? 'px-4' : 'px-8',
-          )}
-        >
-          <Link
-            href="/"
-            className="font-bytesized text-foreground sodo cursor-pointer text-xl"
-          >
-            Himanshu
+        <div className="from-background via-background/70 pointer-events-none absolute inset-0 bg-gradient-to-b to-transparent" />
+        <div className="relative mx-auto flex h-20 w-full max-w-[672px] items-center justify-between px-6 md:px-8">
+          <Link href="/" className="display text-foreground text-xl">
+            HS<em>.</em>
           </Link>
 
           {!isMobile ? (
-            <nav className="text-shadow-hazy flex space-x-2 max-md:hidden">
+            <nav className="flex items-center gap-7">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
+                  target={item.external ? '_blank' : undefined}
                   onClick={(e) => handleSmoothScroll(e, item.href)}
-                  style={
-                    {
-                      // boxShadow: " 5px 5px 5px #6666",
-                    }
-                  }
-                  className="sodo cursor-pointer rounded-xl p-2 shadow-[inset_4px_4px_4px_#60606030] transition-all duration-500 hover:bg-[#4441] hover:shadow-[inset_7px_7px_7px_#6669] dark:bg-black/50"
+                  className="font-geist-mono text-muted-foreground hover:text-foreground text-[11px] tracking-widest uppercase transition-colors duration-300"
                 >
-                  {item.icon}
+                  {item.name}
                 </Link>
               ))}
             </nav>
           ) : (
-            <MobileMenuBtn />
+            <button
+              onClick={() => setIsMobileOpen((v) => !v)}
+              aria-label="Toggle menu"
+              className="font-geist-mono text-muted-foreground hover:text-foreground text-[11px] tracking-widest uppercase transition-colors"
+            >
+              {isMobileOpen ? 'Close' : 'Menu'}
+            </button>
           )}
         </div>
       </header>

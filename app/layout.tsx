@@ -1,51 +1,27 @@
 import type React from 'react'
 import '@/app/globals.css'
 import type { Metadata } from 'next'
-import {
-  Inter,
-  Racing_Sans_One,
-  Geist,
-  Space_Grotesk,
-  Raleway,
-} from 'next/font/google'
-import localFont from 'next/font/local'
+import { Inter, Instrument_Serif, Geist_Mono } from 'next/font/google'
 import { ThemeProvider } from '@/lib/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeToggle } from '@/components/theme-toggle'
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '200', '300'],
+  variable: '--font-sans-face',
 })
 
-const bytesized = localFont({
-  src: '../public/font/bytesized-latin-400-normal.woff2',
-  variable: '--font-bytesized',
-})
-
-const racingSansOne = Racing_Sans_One({
+const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
-  variable: '--font-racing-sans-one',
+  variable: '--font-serif-face',
   weight: ['400'],
+  style: ['normal', 'italic'],
 })
 
-const geistSans = Geist({
+const geistMono = Geist_Mono({
   subsets: ['latin'],
-  variable: '--font-geist-sans',
-  weight: ['400', '500', '600', '700', '200', '300'],
-})
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  weight: ['300', '400', '500', '600', '700'],
-})
-
-const raleway = Raleway({
-  subsets: ['latin'],
-  variable: '--font-raleway',
-  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-mono-face',
+  weight: ['400', '500'],
 })
 
 export const metadata: Metadata = {
@@ -108,13 +84,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${instrumentSerif.variable} ${geistMono.variable}`}
+    >
       <head>
         <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="32x32" />
       </head>
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${bytesized.variable} ${racingSansOne.variable} ${geistSans.variable} ${raleway.variable} overflow-x-hidden antialiased`}
-      >
+      <body className="overflow-x-hidden antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

@@ -6,35 +6,38 @@ import Navbar from '@/components/navbar'
 import ProjectsSection from '@/components/projects-section'
 import SkillsSection from '@/components/skills-section'
 import GrainAnimation from '@/components/grain-animation'
-import { EasterEgg } from '@/components/animations'
 import ProgressiveBlur from '@/components/progressive-blur'
+import SiteFooter from '@/components/site-footer'
 
 export default async function Home() {
   return (
-    <div className="bg-background min-h-screen min-w-screen overflow-hidden">
+    <div className="bg-background min-h-screen">
       <GrainAnimation />
       <Navbar />
-      <main className="z-10 mx-auto space-y-24 px-8 pt-[40vh] pb-[20vh] lg:max-w-[640px]">
-        <div id="about">
+      <main className="relative z-10 mx-auto w-full max-w-[672px] px-6 md:px-8 pb-[20vh]">
+        <div id="about" className="flex min-h-[92svh] items-center pt-24">
           <AboutSection />
         </div>
-        <div id="experience">
-          <ExperienceSection />
+        <div className="space-y-28 pb-24 md:space-y-36">
+          <div id="experience" className="scroll-mt-24">
+            <ExperienceSection />
+          </div>
+          <div id="projects" className="scroll-mt-24">
+            <ProjectsSection />
+          </div>
+          <div id="skills" className="scroll-mt-24">
+            <SkillsSection />
+          </div>
+          <div id="education" className="scroll-mt-24">
+            <EducationSection />
+          </div>
+          <div id="contact" className="scroll-mt-24">
+            <ContactSection />
+          </div>
         </div>
-        <div id="projects">
-          <ProjectsSection />
-        </div>
-        <div id="skills">
-          <SkillsSection />
-        </div>
-        <div id="education">
-          <EducationSection />
-        </div>
-        <div id="contact">
-          <ContactSection />
-        </div>
+        <SiteFooter />
       </main>
-      <ProgressiveBlur className="fixed inset-x-0 -bottom-10 z-20 h-[30%]" />
+      <ProgressiveBlur className="fixed inset-x-0 -bottom-10 z-20 h-[20%]" />
       <ProgressiveBlur className="fixed inset-x-0 -top-10 z-20 h-[20%] rotate-0" />
     </div>
   )

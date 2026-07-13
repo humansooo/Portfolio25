@@ -1,46 +1,48 @@
 import { experiences } from '@/constants/data'
-import { Dot } from 'lucide-react'
-import { FadeInWhenVisible } from './animate'
-import ExpLinkTitle from './ui/exp-link-title'
 import { HtmlRenderer } from './ui/html-renderer'
-import { EasterEgg } from './animations'
+import SectionHeading from './section-heading'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function ExperienceSection() {
   return (
-    <section className="relative">
-      <FadeInWhenVisible className="w-full">
-        <h2 className="font-bytesized text-foreground gloom mb-16 text-2xl font-light">
-          Experience
-        </h2>
-        <div className="space-y-12">
-          {experiences.map((exp, index) => (
-            <div key={index} className="flex">
-              <div className="w-full">
-                <h3 className="text-foreground/80 mb-3 flex w-full items-center justify-between text-xl font-bold">
-                  <ExpLinkTitle title={exp.title} link={exp.link} />
-                  <p className="text-foreground/90 font-geist-mono text-right text-xs">
-                    {exp.year}
-                  </p>
-                </h3>
-                <p className="text-foreground/80 mb-1 text-sm font-semibold">
+    <section>
+      <SectionHeading index="01" title="Experience" />
+      <div className="space-y-14">
+        {experiences.map((exp, index) => (
+          <article key={index} className="group">
+            <p className="font-geist-mono text-muted-foreground text-[11px] tracking-widest uppercase">
+              {exp.year}
+            </p>
+            <h3 className="mt-2.5 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+              {exp.link ? (
+                <Link
+                  href={exp.link}
+                  target="_blank"
+                  className="text-foreground inline-flex items-baseline gap-1.5 text-lg font-medium tracking-tight"
+                >
+                  <span>{exp.company}</span>
+                  <ArrowUpRight
+                    size={14}
+                    className="text-muted-foreground translate-y-0.5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                </Link>
+              ) : (
+                <span className="text-foreground text-lg font-medium tracking-tight">
                   {exp.company}
-                </p>
-                <HtmlRenderer
-                  content={exp.description}
-                  className="text-foreground/80 text-sm leading-relaxed"
-                />
-              </div>
-            </div>
-          ))}
-          <EasterEgg
-            rotate={40}
-            style={{
-              transform: 'translate(0%, 0%)',
-              opacity: 0.2,
-            }}
-          />
-        </div>
-      </FadeInWhenVisible>
+                </span>
+              )}
+              <span className="display text-muted-foreground text-base italic">
+                {exp.title}
+              </span>
+            </h3>
+            <HtmlRenderer
+              content={exp.description}
+              className="text-muted-foreground mt-3 text-sm leading-relaxed"
+            />
+          </article>
+        ))}
+      </div>
     </section>
   )
 }

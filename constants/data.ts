@@ -4,7 +4,7 @@ export const user = {
   email: 'himanshuforpro@gmail.com',
   phone: '+918320330695',
   github: 'https://github.com/humansooo',
-  linkedin: 'https://www.linkedin.com/in/hmxnsu/',
+  linkedin: 'https://www.linkedin.com/in/kitchens-on-fire/',
 }
 
 export const summary =
