@@ -50,16 +50,14 @@ export function HtmlRenderer({ content, className }: HtmlRendererProps) {
       .replace(/<\/ul>/g, '</ul>')
       .replace(
         /<li>/g,
-        "<li class='relative pl-5 text-sm before:absolute before:left-0 before:content-[\"—\"] before:opacity-40'>",
+        '<li class=\'relative pl-5 text-sm before:absolute before:left-0 before:content-["—"] before:opacity-40\'>',
       )
       .replace(/<\/li>/g, '</li>')
       .replace(/<b>/g, "<b class='font-bold'>")
       .replace(/<\/b>/g, '</b>')
 
     return (
-      <div
-        className={cn(className)}
-      >
+      <div className={cn(className)}>
         <div className="relative">
           <div
             ref={contentRef}

@@ -7,7 +7,11 @@ const links = [
   { label: 'Email', href: `mailto:${user.email}`, value: user.email },
   { label: 'Phone', href: `tel:${user.phone}`, value: user.phone },
   { label: 'GitHub', href: user.github, value: 'github.com/humansooo' },
-  { label: 'LinkedIn', href: user.linkedin, value: 'linkedin.com/in/kitchens-on-fire' },
+  {
+    label: 'LinkedIn',
+    href: user.linkedin,
+    value: 'linkedin.com/in/kitchens-on-fire',
+  },
 ]
 
 export default function ContactSection() {
@@ -20,8 +24,8 @@ export default function ContactSection() {
         <em>Let&apos;s talk.</em>
       </h3>
       <p className="text-muted-foreground mt-6 max-w-[46ch] text-sm leading-relaxed">
-        Open to full-time roles, contract work and interesting side quests.
-        The fastest way to reach me is email.
+        Open to full-time roles, contract work and interesting side quests. The
+        fastest way to reach me is email.
       </p>
 
       <div className="mt-10 space-y-0">

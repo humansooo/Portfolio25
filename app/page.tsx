@@ -14,7 +14,7 @@ export default async function Home() {
     <div className="bg-background min-h-screen">
       <GrainAnimation />
       <Navbar />
-      <main className="relative z-10 mx-auto w-full max-w-[672px] px-6 md:px-8 pb-[20vh]">
+      <main className="relative z-10 mx-auto w-full max-w-[672px] px-6 pb-[20vh] md:px-8">
         <div id="about" className="flex min-h-[92svh] items-center pt-24">
           <AboutSection />
         </div>

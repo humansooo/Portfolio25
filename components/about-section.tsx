@@ -6,7 +6,10 @@ import { ArrowUpRight } from 'lucide-react'
 export default function AboutSection() {
   return (
     <section className="w-full">
-      <p className="overline-label fade-up" style={{ '--fade-delay': '0ms' } as React.CSSProperties}>
+      <p
+        className="overline-label fade-up"
+        style={{ '--fade-delay': '0ms' } as React.CSSProperties}
+      >
         Himanshu Suthar — Full Stack Developer
       </p>
 
@@ -23,9 +26,9 @@ export default function AboutSection() {
         className="fade-up text-muted-foreground mt-8 max-w-[46ch] text-[15px] leading-relaxed"
         style={{ '--fade-delay': '240ms' } as React.CSSProperties}
       >
-        Three+ years shipping React Native, NestJS and TypeScript daily —
-        across healthtech, mobility and SaaS. I own products end to end:
-        architecture, CI/CD, and everything in between.
+        Three+ years shipping React Native, NestJS and TypeScript daily — across
+        healthtech, mobility and SaaS. I own products end to end: architecture,
+        CI/CD, and everything in between.
       </p>
 
       <div
